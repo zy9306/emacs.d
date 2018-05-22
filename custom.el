@@ -167,7 +167,7 @@
 ;; auto-virtualenv - uses pyvenv.
 ;; 需要设置$WORKON_HOME
 
-;; 项目根目录增加 .python-version里面写上虚拟环境的名称如：venv36
+;; 项目根目录增加 .python-version里面写上虚拟环境的名称(须包含路径)如：~/Envs/venv36/
 (require 'auto-virtualenv)
 (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
 ;; Activate on changing buffers
@@ -258,7 +258,8 @@
 (setq neo-smart-open t)
 
 ;;当执行 projectile-switch-project (C-c p p) 时，NeoTree 会自动改变根目录。
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;;没有必要自动,可以用F9代替,如有需要,取消注释
+;;(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;;如果使用 find-file-in-project (ffip), 你可以添加下面代码到 .emacs.d， 就可以随时切换根到项目目录：
 (defun neotree-ffip-project-dir ()
