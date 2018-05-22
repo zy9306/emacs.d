@@ -75,15 +75,18 @@
 
 ;;; ============================================================
 
-(if (eq system-type 'windows-nt)
-    (message "windows下linum-mode和中英文字体都设置成文泉驿会有冲突的bug,不启用linum-mode")
-  (global-linum-mode 1))
+;; linum-mode会有性能问题，卡顿，使用nlinum-mode代替
+;; 默认不显示行号了，如有需要，手动开启，使用nlinum-mode
+;; (if (eq system-type 'windows-nt)
+;;     (message "windows下linum-mode和中英文字体都设置成文泉驿会有冲突的bug,不启用nlinum-mode")
+;;   (global-nlinum-mode 1))
 
+;; 若不出现显示问题，无需手动调整
+;; (setq linum-format "  %d ")
 ;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 ;;; ============================================================
 
-;; (setq linum-format "  %d ")
 ;; (desktop-save-mode 1)
 (global-visual-line-mode 1)
 (setq-default tab-width 4)
