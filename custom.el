@@ -31,6 +31,11 @@
 (require-package 'neotree)
 
 
+;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
+;; 代码着色延迟，可明显改善卡顿情况
+(setq jit-lock-defer-time 0.05)
+
+
 ;; https://github.com/ericdanan/counsel-projectile/tree/a95ef966aeeaa6ab0b90fe8d29c31f6d92f99fb6#installation
 ;; Ivy UI for Projectile，未装此包前就已经可以了，
 ;; 目前来看唯一的作用只是C-c p s g的时候结果显示在minibuffer中，但是这样也有缺点，默认是不启用的，想启用该功能
