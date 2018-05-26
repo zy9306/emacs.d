@@ -60,6 +60,9 @@
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(beacon-color "#d54e53")
+ '(company-idle-delay 0.05)
+ '(company-minimum-prefix-length 2)
+ '(company-tooltip-idle-delay 0.05)
  '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
  '(custom-safe-themes
    (quote
