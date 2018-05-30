@@ -115,11 +115,13 @@
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family chinese :size chinese-size))))
-;; (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13)
+(set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13)
 
 ;; 解决fontset 'tty' does not exist
-(if (display-graphic-p)
-    (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13))
+;; 终端运行过后，再次打开图形界面会出现(error "Font ‘tty’ is not defined")
+;; 需删除.emacs.desktop文件，目前没有合适的解决方案，据说emacs26修复了这个问题
+;; (if (display-graphic-p)
+;;     (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13))
 
 ;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
