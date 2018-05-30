@@ -108,14 +108,18 @@
 
 ;;; ============================================================
 
-;;中文与外文字体设置
+;; 中文与外文字体设置
 (defun set-font (english chinese english-size chinese-size)
   (set-face-attribute 'default nil :font
                       (format   "%s:pixelsize=%d"  english english-size))
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family chinese :size chinese-size))))
-(set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13)
+;; (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13)
+
+;; 解决fontset 'tty' does not exist
+(if (display-graphic-p)
+    (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13))
 
 ;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
