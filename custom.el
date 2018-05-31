@@ -203,6 +203,11 @@
 ;; 可能需要更改
 (setenv "WORKON_HOME" "~/Envs")
 
+;; 修改单词分界符，下划线也属于单词一部分
+(defun my-python-mode-hook ()
+  (modify-syntax-entry ?_ "w"))
+(add-hook 'python-mode-hook 'my-python-mode-hook)
+
 
 
 
@@ -283,3 +288,9 @@
               (neotree-find file-name)))
       (message "Could not find git project root."))))
 (global-set-key [f9] 'neotree-project-dir)
+
+
+
+
+
+(use-package ill-edit)
