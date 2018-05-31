@@ -10,6 +10,13 @@
 ;;; 如果不想出错的时候弹出一个buffer调试信息，可以设置 toggle-debug-on-error
 ;;; 这样就只会在minibuffer提示message,建议不要全局开启，只在需要的时候手动切换
 
+
+(defvar emacs-dir (file-name-directory load-file-name)
+  "The root dir of the .emacs.d")
+(defvar personal-lisp-dir (expand-file-name "lisp-personal" emacs-dir))
+(add-to-list 'load-path personal-lisp-dir)
+
+
 ;;; 也可以在启动之后运行 package-install-selected-packages
 (require-package 'color-theme-sanityinc-tomorrow)
 (require-package 'color-theme-sanityinc-solarized)
@@ -39,12 +46,14 @@
 (require-package 'counsel-projectile)
 
 
-(defvar emacs-dir (file-name-directory load-file-name)
-  "The root dir of the .emacs.d")
-(defvar personal-lisp-dir (expand-file-name "lisp-personal" emacs-dir))
-(add-to-list 'load-path personal-lisp-dir)
 
-
+;; 使用use-package
+;; This is only needed once, near the top of the file
+(eval-when-compile
+  ;; Following line is not needed if use-package.el is in ~/.emacs.d
+  ;; (add-to-list 'load-path "<path where use-package is installed>")
+  (require 'use-package))
+(use-package unicad)
 
 
 
@@ -91,15 +100,7 @@
 ;; (if (eq system-type 'windows-nt)
 ;;     (message "windows下linum-mode和中英文字体都设置成文泉驿会有冲突的bug,不启用nlinum-mode")
 ;;   (global-nlinum-mode 1))
-
 ;; 若不出现显示问题，无需手动调整
-;; (setq linum-format "  %d ")
-
-
-
-
-;; (desktop-save-mode 1)
-;; (global-visual-line-mode 1)
 (setq-default tab-width 4)
 
 
@@ -121,22 +122,24 @@
 ;; (if (display-graphic-p)
 ;;     (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13))
 
+;; 设置字符集
+;; 如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 M-x revert-buffer-with-coding-system 选择 gbk 即可.
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+(set-buffer-file-coding-system 'utf-8-unix)
+(set-clipboard-coding-system 'utf-8-unix)
+(set-file-name-coding-system 'utf-8-unix)
+(set-keyboard-coding-system 'utf-8-unix)
+(set-next-selection-coding-system 'utf-8-unix)
+(set-selection-coding-system 'utf-8-unix)
+(set-terminal-coding-system 'utf-8-unix)
+(setq locale-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
-
-
-
-
-;; 使用use-package
-;; This is only needed once, near the top of the file
-(eval-when-compile
-  ;; Following line is not needed if use-package.el is in ~/.emacs.d
-  ;; (add-to-list 'load-path "<path where use-package is installed>")
-  (require 'use-package))
-
-
-
-(use-package unicad)
-
+(when (eq system-type 'windows-nt)
+  (set-default 'process-coding-system-alist
+               '(("[pP][lL][iI][nN][kK]" gbk-dos . gbk-dos)
+                 ("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos))))
 
 
 
@@ -206,30 +209,6 @@
 
 
 
-;; 设置字符集
-;; 如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 M-x revert-buffer-with-coding-system 选择 gbk 即可.
-(set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
-(set-buffer-file-coding-system 'utf-8-unix)
-(set-clipboard-coding-system 'utf-8-unix)
-(set-file-name-coding-system 'utf-8-unix)
-(set-keyboard-coding-system 'utf-8-unix)
-(set-next-selection-coding-system 'utf-8-unix)
-(set-selection-coding-system 'utf-8-unix)
-(set-terminal-coding-system 'utf-8-unix)
-(setq locale-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-
-(when (eq system-type 'windows-nt)
-  (set-default 'process-coding-system-alist
-               '(("[pP][lL][iI][nN][kK]" gbk-dos . gbk-dos)
-                 ("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos))))
-
-
-
-
-
-
 
 ;; org-mode
 ;; 代码语法高亮
@@ -260,11 +239,6 @@
 
 ;;;all-the-icons
 (require 'all-the-icons)
-
-
-
-
-
 
 
 ;;; neotree
