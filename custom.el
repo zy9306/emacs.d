@@ -1,5 +1,3 @@
-;;; ============================================================
-
 ;;; 前置条件
 ;;; 1.系统需安装ag,否则M-?(查找引用), M-s /(swipper搜索）等命令无法工作，搜索相关的在init-ivy.el文件中，可以好好看看
 ;;;   https://github.com/ggreer/the_silver_searcher
@@ -46,9 +44,9 @@
 (defvar personal-lisp-dir (expand-file-name "lisp-personal" emacs-dir))
 (add-to-list 'load-path personal-lisp-dir)
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-;;; ============================================================
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -83,10 +81,10 @@
  ;; If there is more than one, they won't work right.
  )
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
-;;; ============================================================
+
+
 
 ;; linum-mode会有性能问题，卡顿，使用nlinum-mode代替
 ;; 默认不显示行号了，如有需要，手动开启，使用nlinum-mode
@@ -96,17 +94,17 @@
 
 ;; 若不出现显示问题，无需手动调整
 ;; (setq linum-format "  %d ")
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-;;; ============================================================
+
+
 
 ;; (desktop-save-mode 1)
-(global-visual-line-mode 1)
+;; (global-visual-line-mode 1)
 (setq-default tab-width 4)
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-;;; ============================================================
+
+
 
 ;; 中文与外文字体设置
 (defun set-font (english chinese english-size chinese-size)
@@ -123,10 +121,10 @@
 ;; (if (display-graphic-p)
 ;;     (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13))
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
-;;; ============================================================
+
+
 
 ;; 使用use-package
 ;; This is only needed once, near the top of the file
@@ -135,14 +133,14 @@
   ;; (add-to-list 'load-path "<path where use-package is installed>")
   (require 'use-package))
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 (use-package unicad)
 
 
 
 
-;;; ============================================================
+
 
 ;; multiple-cursors
 ;; https://github.com/magnars/multiple-cursors.el/tree/75dd6bf83af4eff83dc22e278c47264c1a41cd66
@@ -157,11 +155,11 @@
 (global-unset-key (kbd "M-<down-mouse-1>"))
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
-;;; ============================================================
+
+
 
 ;; Python IDE
 ;; 使用elpy代替anaconda-mode
@@ -202,11 +200,11 @@
 ;; 可能需要更改
 (setenv "WORKON_HOME" "~/Envs")
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
-;;; ============================================================
+
+
 
 ;; 设置字符集
 ;; 如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 M-x revert-buffer-with-coding-system 选择 gbk 即可.
@@ -227,11 +225,11 @@
                '(("[pP][lL][iI][nN][kK]" gbk-dos . gbk-dos)
                  ("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos))))
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
-;;; ============================================================
+
+
 
 ;; org-mode
 ;; 代码语法高亮
@@ -242,9 +240,9 @@
 
 (setq org-agenda-files (file-expand-wildcards "~/Nutstore/org/*.org"))
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-;;; ============================================================
+
+
 
 ;;; 改变buffer位置，比如将buffer移到左边或右边
 ;;; https://github.com/lukhas/buffer-move/tree/cb517ecf8409b5fdcda472d7190c6021f0c49751
@@ -255,19 +253,19 @@
 (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 ;; (setq buffer-move-behavior 'move)  不交换缓冲区内容
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
-;;; ============================================================
+
+
 
 ;;;all-the-icons
 (require 'all-the-icons)
 
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
-;;; ============================================================
+
+
 
 ;;; neotree
 ;;; theme: classic(default) ascii arrow icons nerd
@@ -311,30 +309,3 @@
               (neotree-find file-name)))
       (message "Could not find git project root."))))
 (global-set-key [f9] 'neotree-project-dir)
-
-;; 和上述功能相似，具体区别再研究，目前上述已够用
-;; (defun neotree-project-dir-toggle ()
-;;   "Open NeoTree using the project root, using find-file-in-project,
-;; or the current buffer directory."
-;;   (interactive)
-;;   (let ((project-dir
-;;          (ignore-errors
-;;            ;;; Pick one: projectile or find-file-in-project
-;;                                         ; (projectile-project-root)
-;;            (ffip-project-root)
-;;            ))
-;;         (file-name (buffer-file-name))
-;;         (neo-smart-open t))
-;;     (if (and (fboundp 'neo-global--window-exists-p)
-;;              (neo-global--window-exists-p))
-;;         (neotree-hide)
-;;       (progn
-;;         (neotree-show)
-;;         (if project-dir
-;;             (neotree-dir project-dir))
-;;         (if file-name
-;;             (neotree-find file-name))))))
-;; (global-set-key [f9] 'neotree-project-dir-toggle)
-
-;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
