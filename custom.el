@@ -20,6 +20,7 @@
 ;;; 也可以在启动之后运行 package-install-selected-packages
 (require-package 'color-theme-sanityinc-tomorrow)
 (require-package 'color-theme-sanityinc-solarized)
+(require-package 'spaceline)
 (require-package 'use-package)
 (require-package 'multiple-cursors)
 
@@ -33,6 +34,10 @@
 (require-package 'all-the-icons)
 (require-package 'neotree)
 
+
+;; https://github.com/TheBB/spaceline
+(require 'spaceline-config)
+(spaceline-emacs-theme)
 
 ;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
 ;; 代码着色延迟，可明显改善卡顿情况
