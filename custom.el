@@ -213,6 +213,11 @@
   (modify-syntax-entry ?_ "w"))
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 
+;; 函数调用高亮
+(font-lock-add-keywords
+ 'python-mode
+ '(("\\<\\(\\sw+\\) ?(" 1 'font-lock-function-name-face)))
+
 
 
 
