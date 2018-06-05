@@ -235,7 +235,12 @@
 
 (setq org-agenda-files (file-expand-wildcards "~/Nutstore/org/*.org"))
 
-
+;; 时间日期相关的key
+;; 本来org-time-stamp-inactive默认为C-c !
+;; 但是C-c !被fly-check的prefix给占了
+;; 要插入包含当前时间的，加C-u即可,如C-u C-c .和C-u C-c @
+(global-set-key (kbd "C-c .")  'org-time-stamp)
+(global-set-key (kbd "C-c @")  'org-time-stamp-inactive)
 
 
 
