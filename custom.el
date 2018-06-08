@@ -120,6 +120,7 @@
  '(font-lock-variable-name-face ((t (:foreground "#24292E"))))
  '(helm-swoop-target-line-face ((t (:background "gray" :foreground "black"))))
  '(highlight-indentation-face ((t (:background "gainsboro"))))
+ '(neo-vc-up-to-date-face ((t (:foreground "black"))))
  '(smerge-base ((t nil)))
  '(smerge-lower ((t nil)))
  '(smerge-markers ((t nil)))
