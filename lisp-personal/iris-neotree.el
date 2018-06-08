@@ -9,6 +9,10 @@
   (global-set-key [f8] 'neotree-toggle)
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
+  ;; 显示版本控制信息
+  ;; (setq neo-vc-integration '(face char))
+  (setq neo-vc-integration '(face))
+
   ;; Every time when the neotree window is opened, let it find current file and jump to node.
   (setq neo-smart-open t)
 
@@ -36,7 +40,8 @@
     (interactive)
     (let ((project-dir (projectile-project-root))
           (file-name (buffer-file-name)))
-      (neotree-toggle)
+      ;; (neotree-toggle)
+      (neotree-show)
       (if project-dir
           (if (neo-global--window-exists-p)
               (progn
