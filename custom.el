@@ -71,8 +71,9 @@
  '(custom-enabled-themes (quote (sanityinc-tomorrow-day)))
  '(custom-safe-themes
    (quote
-    ("bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
+    ("4d8578f86c9de7531ba8519edd0a1f6be090a6ef1e093feabfd5263e454882fb" "83e7d353e2c2c4dde0de89dc824b51fa56b1bc2241da78de06eb641b84bb629f" "4b2b038b98383459c1cf99ee7129769017d5da44959bf1efe3ce34208a353bb7" "ddac41e96a403e46ad595499148b12512610927a77f8810e74e8ce8205cf4e01" "241ddb7865c44fc66e7f862ff4210e8497c994f0003f698861ffcee01ee77e68" "8a8d606a19d903bbf54c2cae04b8c590fbee05b58b1f3d64f749d57a8d995173" "8e6abd8c511032be7af6223f06bf3d06d5e7b63c0ffb946e8a0d1656dd3944c8" "62f8ada330231b1bc36f5fb902bea1d6aa024c4ab1817b021aa62824629026b6" "3ba8e07ef9e4b1154fb0d8266b1093313e2c72e471e2ef85db6cb90754d093c3" "9ed36b35eb2f1eed0f992a0ab1150859d38fce9facfe0dfeb5bf0cf578d8e24f" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
  '(elpy-rpc-ignored-buffer-size 2097152)
+ '(fci-rule-color "#d6d6d6")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(frame-background-mode (quote dark))
  '(nrepl-message-colors
@@ -80,16 +81,51 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
+    (github-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
- '(session-use-package t nil (session)))
+ '(session-use-package t nil (session))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#c82829")
+     (40 . "#f5871f")
+     (60 . "#eab700")
+     (80 . "#718c00")
+     (100 . "#3e999f")
+     (120 . "#4271ae")
+     (140 . "#8959a8")
+     (160 . "#c82829")
+     (180 . "#f5871f")
+     (200 . "#eab700")
+     (220 . "#718c00")
+     (240 . "#3e999f")
+     (260 . "#4271ae")
+     (280 . "#8959a8")
+     (300 . "#c82829")
+     (320 . "#f5871f")
+     (340 . "#eab700")
+     (360 . "#718c00"))))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-
+ '(default ((t (:inherit nil :stipple nil :background "#F8F8FF" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "WQYF" :family "文泉驿等宽微米黑"))))
+ '(font-lock-builtin-face ((t (:foreground "#005CC5"))))
+ '(font-lock-constant-face ((t (:foreground "#005CC5"))))
+ '(font-lock-function-name-face ((t (:foreground "#6F42C1" :weight bold))))
+ '(font-lock-keyword-face ((t (:foreground "#D73A49" :weight bold))))
+ '(font-lock-string-face ((t (:foreground "#032F62" :weight bold))))
+ '(font-lock-variable-name-face ((t (:foreground "#24292E"))))
+ '(helm-swoop-target-line-face ((t (:background "gray" :foreground "black"))))
+ '(highlight-indentation-face ((t (:background "gainsboro"))))
+ '(smerge-base ((t nil)))
+ '(smerge-lower ((t nil)))
+ '(smerge-markers ((t nil)))
+ '(smerge-refined-added ((t nil)))
+ '(smerge-refined-removed ((t nil)))
+ '(smerge-upper ((t nil))))
 
 
 
@@ -131,7 +167,6 @@
 ;; 始终启用缩进
 (add-hook 'org-mode-hook 'org-indent-mode)
 
-
 (setq org-agenda-files (file-expand-wildcards "~/Nutstore/org/*.org"))
 
 ;; 时间日期相关的key
@@ -153,62 +188,8 @@
 ;; (setq buffer-move-behavior 'move)  不交换缓冲区内容
 
 
-
-
-
-
-;;;all-the-icons
-(require 'all-the-icons)
-
-
-;;; neotree
-;;; theme: classic(default) ascii arrow icons nerd
-;;; For users who want to use the icons theme. Pls make sure you have installed the all-the-icons package and its fonts.
-;;; neotree comes with default bindings of | for vertical split and - for horizontal split.在新缓冲区打开文件
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-
-;; Every time when the neotree window is opened, let it find current file and jump to node.
-(setq neo-smart-open t)
-
-;;当执行 projectile-switch-project (C-c p p) 时，NeoTree 会自动改变根目录。
-;;没有必要自动,可以用F9代替,如有需要,取消注释
-;;(setq projectile-switch-project-action 'neotree-projectile-action)
-
-;;如果使用 find-file-in-project (ffip), 你可以添加下面代码到 .emacs.d， 就可以随时切换根到项目目录：
-(defun neotree-ffip-project-dir ()
-  "Open NeoTree using the git root."
-  (interactive)
-  (let ((project-dir (ffip-project-root))
-        (file-name (buffer-file-name)))
-    (if project-dir
-        (progn
-          (neotree-dir project-dir)
-          (neotree-find file-name))
-      (message "Could not find git project root."))))
-(global-set-key (kbd "C-c C-p") 'neotree-ffip-project-dir)
-
-;;; Projectile
-;;; Similar to find-file-in-project, NeoTree can be opened (toggled) at projectile project root as follows:
-(defun neotree-project-dir ()
-  "Open NeoTree using the git root."
-  (interactive)
-  (let ((project-dir (projectile-project-root))
-        (file-name (buffer-file-name)))
-    (neotree-toggle)
-    (if project-dir
-        (if (neo-global--window-exists-p)
-            (progn
-              (neotree-dir project-dir)
-              (neotree-find file-name)))
-      (message "Could not find git project root."))))
-(global-set-key [f9] 'neotree-project-dir)
-
-
-
-
-
 (use-package iris-edit)
 (use-package iris-helm)
 (use-package iris-python)
 (use-package iris-font)
+(use-package iris-neotree)
