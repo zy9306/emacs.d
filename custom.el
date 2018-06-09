@@ -112,11 +112,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#F8F8FF" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "WQYF" :family "文泉驿等宽微米黑"))))
- '(font-lock-builtin-face ((t (:foreground "#005CC5"))))
+ '(font-lock-builtin-face ((t (:foreground "#0086B3"))))
  '(font-lock-constant-face ((t (:foreground "#005CC5"))))
- '(font-lock-function-name-face ((t (:foreground "#6F42C1" :weight bold))))
- '(font-lock-keyword-face ((t (:foreground "#D73A49" :weight bold))))
- '(font-lock-string-face ((t (:foreground "#032F62" :weight bold))))
+ '(font-lock-doc-face ((t (:foreground "#999988" :slant italic))))
+ '(font-lock-function-name-face ((t (:foreground "#990000" :weight bold))))
+ '(font-lock-keyword-face ((t (:foreground "#000000" :weight bold))))
+ '(font-lock-string-face ((t (:foreground "#008080" :weight bold))))
  '(font-lock-variable-name-face ((t (:foreground "#24292E"))))
  '(helm-swoop-target-line-face ((t (:background "gray" :foreground "black"))))
  '(highlight-indentation-face ((t (:background "gainsboro"))))

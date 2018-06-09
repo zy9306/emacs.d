@@ -42,11 +42,65 @@
   ;; 修改单词分界符，下划线也属于单词一部分
   (defun my-python-mode-hook ()
     (modify-syntax-entry ?_ "w"))
-  (add-hook 'python-mode-hook 'my-python-mode-hook)
-  ;; 函数调用高亮
-  (font-lock-add-keywords
-   'python-mode
-   '(("\\<\\(\\sw+\\) ?(" 1 'font-lock-function-name-face))))
+  (add-hook 'python-mode-hook 'my-python-mode-hook))
+
+
+;; 补充相关语法高亮
+
+;; 函数调用高亮
+(font-lock-add-keywords
+ 'python-mode
+ '(("\\<\\(\\sw+\\) ?(" 1 'font-lock-function-name-face)))
+
+(defface python-class-face
+  '((t :foreground "#445588"
+       :weight bold
+       ))
+  "Face for global variables."
+  :group 'iris-python-mode )
+
+(defface python-self-face
+  '((t :foreground "#94558D"
+       ))
+  "Face for global variables."
+  :group 'iris-python-mode )
+
+;; 装饰器有问题待修改
+(defface python-decorator-face
+  '((t :foreground "#990000"
+       :weight bold
+       ))
+  "Face for global variables."
+  :group 'iris-python-mode )
+
+(defface python-number-face
+  '((t :foreground "#009999"
+       ))
+  "Face for global variables."
+  :group 'iris-python-mode )
+
+(defface python-operation-face
+  '((t :foreground "#000000"
+       :weight bold
+       ))
+  "Face for global variables."
+  :group 'iris-python-mode )
+
+(font-lock-add-keywords
+ 'python-mode
+ '(("\\<class \\(\\sw+\\)" 1 'python-class-face)))
+
+(font-lock-add-keywords
+ 'python-mode
+ '(("\\<self" 0 'python-self-face)))
+
+(font-lock-add-keywords
+ 'python-mode
+ '(("\\<@\\(\\sw+\\)" 1 'python-decorator-face)))
+
+(font-lock-add-keywords
+ 'python-mode
+ '(("\\<[0-9]+\\(\\.?[0-9]+\\)?" 0 'python-number-face)))
 
 (provide 'iris-python)
 ;;; iris-python.el ends here
