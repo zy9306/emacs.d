@@ -125,6 +125,7 @@
  '(highlight ((t (:background "light gray" :inverse-video nil))))
  '(highlight-indentation-face ((t (:background "gainsboro"))))
  '(neo-vc-up-to-date-face ((t (:foreground "black"))))
+ '(region ((t (:background "light coral" :inverse-video nil))))
  '(smerge-base ((t nil)))
  '(smerge-lower ((t nil)))
  '(smerge-markers ((t nil)))
