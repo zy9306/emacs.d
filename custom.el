@@ -122,6 +122,7 @@
  '(helm-selection ((t (:background "light coral" :foreground "white"))))
  '(helm-selection-line ((t (:background "dark gray" :foreground "black"))))
  '(helm-swoop-target-line-face ((t (:background "dark gray" :foreground "black"))))
+ '(highlight ((t (:background "light gray" :inverse-video nil))))
  '(highlight-indentation-face ((t (:background "gainsboro"))))
  '(neo-vc-up-to-date-face ((t (:foreground "black"))))
  '(smerge-base ((t nil)))
