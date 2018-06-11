@@ -35,8 +35,8 @@
 (spaceline-emacs-theme)
 
 ;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
-;; 代码着色延迟，可明显改善卡顿情况
-(setq jit-lock-defer-time 0.05)
+;; 代码着色延迟，可明显改善卡顿情况(注释掉的原因，大文件依旧卡顿，文件太大直接局部关掉elpy吧，待更优解)
+;; (setq jit-lock-defer-time 0.05)
 
 
 ;; https://github.com/ericdanan/counsel-projectile/tree/a95ef966aeeaa6ab0b90fe8d29c31f6d92f99fb6#installation
