@@ -150,6 +150,7 @@
 
 ;; multiple-cursors
 ;; https://github.com/magnars/multiple-cursors.el/tree/75dd6bf83af4eff83dc22e278c47264c1a41cd66
+;; 有些命令不可用可以查看.emacs.d/.mc-lists.el
 
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c m c") 'mc/edit-lines)
