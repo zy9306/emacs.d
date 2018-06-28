@@ -177,3 +177,4 @@
 (use-package iris-python)
 (use-package iris-font)
 (use-package iris-neotree)
+(use-package iris-avy)
