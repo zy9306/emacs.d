@@ -180,3 +180,4 @@
 (use-package bhj-fonts)
 (use-package iris-neotree)
 (use-package iris-avy)
+(use-package iris-theme)
