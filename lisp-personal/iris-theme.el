@@ -90,6 +90,7 @@
  '(org-verbatim ((((class color) (min-colors 89)) (:foreground "#0066CC"))))
  '(org-verse ((((class color) (min-colors 89)) (:slant italic :foreground "dim gray" :background "#EEEEEE"))))
  '(org-warning ((((class color) (min-colors 89)) (:weight bold :foreground "black" :background "#CCE7FF"))))
+ '(default ((((class color) (min-colors 89)) (:foreground "#333333" :background "#FFFFFF"))))
  )
 
 (provide 'iris-theme)
