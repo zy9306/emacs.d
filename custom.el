@@ -11,6 +11,7 @@
 ;;; 这样就只会在minibuffer提示message,建议不要全局开启，只在需要的时候手动切换
 
 (add-to-list 'load-path "~/.emacs.d/lisp-personal")
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
 
 
 ;;; 也可以在启动之后运行 package-install-selected-packages
@@ -175,6 +176,7 @@
 (use-package iris-edit)
 (use-package iris-helm)
 (use-package iris-python)
-(use-package iris-font)
+;; (use-package iris-font)
+(use-package bhj-fonts)
 (use-package iris-neotree)
 (use-package iris-avy)
