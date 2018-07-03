@@ -2,6 +2,8 @@
 ;; fringe是buffer两边一小段宽度的颜色
 ;; 将helm的文件及目录的背景换成了其它颜色
 ;; helm-match及helm-match-item更改
+;; helm-candidate-number修改
+;; mode-line及powerline修改
 
 (deftheme spacemacs-light
   "Created 2018-07-02.")
@@ -129,7 +131,7 @@
  '(helm-buffer-process ((((class color) (min-colors 89)) (:foreground "#3a81c3" :background "#FFEDED"))))
  '(helm-buffer-saved-out ((((class color) (min-colors 89)) (:foreground "#655370" :background "#FFEDED"))))
  '(helm-buffer-size ((((class color) (min-colors 89)) (:foreground "#655370" :background "#FFEDED"))))
- '(helm-candidate-number ((((class color) (min-colors 89)) (:background "#FFEDED" :foreground "#3a81c3" :inherit bold))))
+ '(helm-candidate-number ((((class color) (min-colors 89)) (:background "#FFFFFF" :foreground "#3a81c3" :inherit bold))))
  '(helm-ff-directory ((((class color) (min-colors 89)) (:foreground "#3a81c3" :background "#FFEDED" :inherit bold))))
  '(helm-ff-dotted-directory ((((class color) (min-colors 89)) (:foreground "#3a81c3" :background "#FFEDED" :inherit bold))))
  '(helm-ff-dotted-symlink-directory ((((class color) (min-colors 89)) (:foreground "#21b8c7" :background "#FFEDED" :inherit bold))))
@@ -153,6 +155,12 @@
  '(helm-separator ((((class color) (min-colors 89)) (:foreground "#6c4173" :background "#FFEDED"))))
  '(helm-source-header ((((class color) (min-colors 89)) (:background "#6c4173" :foreground "#FFEDED" :inherit bold))))
  '(helm-visible-mark ((((class color) (min-colors 89)) (:foreground "#3a81c3" :background "#e3dedd"))))
+ '(mode-line ((t (:background "white" :foreground "#655370" :box (:line-width 1 :color "#b3b9be")))))
+ '(mode-line-inactive ((t (:background "white" :foreground "#655370" :box (:line-width 1 :color "#b3b9be")))))
+ '(powerline-active1 ((t (:background "#BCBCE0" :foreground "#655370"))))
+ '(powerline-active2 ((t (:background "#BCBCE0" :foreground "#655370"))))
+ '(powerline-inactive1 ((t (:background "white" :foreground "#655370"))))
+ '(powerline-inactive2 ((t (:background "white" :foreground "#655370"))))
  '(default ((((class color) (min-colors 89)) (:foreground "#333333" :background "#FFFFFF"))))
  )
 
