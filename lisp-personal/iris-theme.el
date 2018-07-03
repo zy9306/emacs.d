@@ -1,6 +1,7 @@
 ;; org及font-lock取自leuven-theme
 ;; fringe是buffer两边一小段宽度的颜色
 ;; 将helm的文件及目录的背景换成了其它颜色
+;; helm-match及helm-match-item更改
 
 (deftheme spacemacs-light
   "Created 2018-07-02.")
@@ -144,8 +145,8 @@
  '(helm-grep-match ((((class color) (min-colors 89)) (:foreground nil :background nil :inherit helm-match))))
  '(helm-header ((((class color) (min-colors 89)) (:foreground "#655370" :background "#FFEDED" :underline nil :box nil))))
  '(helm-header-line-left-margin ((((class color) (min-colors 89)) (:foreground "#3a81c3" :background nil))))
- '(helm-match ((((class color) (min-colors 89)) (:background "#edf1ed" :foreground "#3a81c3"))))
- '(helm-match-item ((((class color) (min-colors 89)) (:background "#edf1ed" :foreground "#3a81c3"))))
+ '(helm-match ((((class color) (min-colors 89)) (:background "#FFD1C9" :foreground "#6C4173"))))
+ '(helm-match-item ((((class color) (min-colors 89)) (:background "#FFD1C9" :foreground "#6C4173"))))
  '(helm-moccur-buffer ((((class color) (min-colors 89)) (:foreground "#715ab1" :background "#FFEDED"))))
  '(helm-selection ((((class color) (min-colors 89)) (:background "#d3d3e7"))))
  '(helm-selection-line ((((class color) (min-colors 89)) (:background "#efeae9"))))
