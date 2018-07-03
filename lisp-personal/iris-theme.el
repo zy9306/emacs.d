@@ -1,3 +1,5 @@
+;; desctibe-theme可将主题另存,可以修改相关设置,以及方便的将不同主题需要的部分结合
+;; list-faces-display可以修改样式,可将修改好的样式补充到该文件
 ;; org及font-lock取自leuven-theme
 ;; fringe是buffer两边一小段宽度的颜色
 ;; 将helm的文件及目录的背景换成了其它颜色
