@@ -9,6 +9,7 @@
 
 (custom-theme-set-faces
  'spacemacs-light
+ '(fringe ((((class color) (min-colors 89)) (:background "#EAEAFA" :foreground "#655370"))))
  '(font-lock-builtin-face ((((class color) (min-colors 89)) (:foreground "#006FE0"))))
  '(font-lock-comment-delimiter-face ((((class color) (min-colors 89)) (:foreground "#8D8D84"))))
  '(font-lock-comment-face ((((class color) (min-colors 89)) (:slant italic :foreground "#8D8D84"))))
