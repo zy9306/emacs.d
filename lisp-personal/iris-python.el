@@ -42,7 +42,10 @@
   ;; 修改单词分界符，下划线也属于单词一部分
   (defun my-python-mode-hook ()
     (modify-syntax-entry ?_ "w"))
-  (add-hook 'python-mode-hook 'my-python-mode-hook))
+  (add-hook 'python-mode-hook 'my-python-mode-hook)
+  ;; 设置ipython
+  (setq python-shell-interpreter "ipython"
+        python-shell-interpreter-args "-i --simple-prompt"))
 
 
 ;; 补充相关语法高亮
