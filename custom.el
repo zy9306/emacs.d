@@ -109,6 +109,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
+ '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(spaceline-highlight-face ((t (:background "salmon" :foreground "#3E3D31" :inherit (quote mode-line))))))
 
 
@@ -187,3 +189,4 @@
 ;; pull request解决python二级折叠问题
 ;; https://github.com/gregsexton/origami.el/pull/64/files
 (use-package origami-parsers)
+(use-package iris-imenu-list)
