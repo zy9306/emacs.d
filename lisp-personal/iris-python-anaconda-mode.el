@@ -10,6 +10,9 @@
   (eval-after-load "company"
     '(add-to-list 'company-backends 'company-anaconda))
 
+  ;; 删除括号连同内容paredit-raise-sexp,KEY为M-r,和anaconda的查找引用冲突,在此更改
+  (global-set-key (kbd "C-c M-r") 'anaconda-mode-find-references)
+
   ;; add .python-version file to project root, then add path of virtualenv eg:~/Envs/venv36/
   (require 'auto-virtualenv)
   (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
