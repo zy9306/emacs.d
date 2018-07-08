@@ -33,7 +33,7 @@
 (spaceline-emacs-theme)
 
 ;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
-;; 代码着色延迟，可明显改善卡顿情况(注释掉的原因，大文件依旧卡顿，文件太大直接局部关掉elpy吧，待更优解)
+;; 代码着色延迟，可明显改善卡顿情况(注释掉的原因，大文件依旧卡顿，文件太大直接局部关掉elpy吧,目前使用anaconda代替，待更优解)
 ;; (setq jit-lock-defer-time 0.05)
 
 
@@ -79,7 +79,7 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
+    (company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(session-use-package t nil (session))
  '(vc-annotate-background nil)
@@ -175,10 +175,15 @@
 
 (use-package iris-edit)
 (use-package iris-helm)
-(use-package iris-python)
+;; elpy在代码折叠时非常卡,使用anaconda代替
+;;(use-package iris-python)
+(use-package iris-python-anaconda-mode)
 ;; (use-package iris-font)
 (use-package bhj-fonts)
 (use-package iris-neotree)
 (use-package iris-avy)
 (use-package iris-theme)
 (use-package iris-find-temp-file)
+;; pull request解决python二级折叠问题
+;; https://github.com/gregsexton/origami.el/pull/64/files
+(use-package origami-parsers)
