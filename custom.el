@@ -12,6 +12,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp-personal")
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/elpa-mirror")
 
 
 ;;; 也可以在启动之后运行 package-install-selected-packages
@@ -191,3 +192,4 @@
 ;; https://github.com/gregsexton/origami.el/pull/64/files
 (use-package origami-parsers)
 (use-package iris-imenu-list)
+(use-package iris-elpa-mirror)
