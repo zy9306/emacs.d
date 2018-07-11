@@ -1,6 +1,6 @@
 ;; desctibe-theme可将主题另存,可以修改相关设置,以及方便的将不同主题需要的部分结合
 ;; list-faces-display可以修改样式,可将修改好的样式补充到该文件
-;; org及font-lock取自leuven-theme
+;; org及font-lock取自leuven-theme,其中orgmode的一二三级标题分别为1.3,1.2,1.1
 ;; fringe是buffer两边一小段宽度的颜色
 ;; 将helm的文件及目录的背景换成了其它颜色
 ;; helm-match及helm-match-item更改
@@ -69,8 +69,8 @@
  '(org-hide ((((class color) (min-colors 89)) (:foreground "#E2E2E2"))))
  '(org-latex-and-related ((((class color) (min-colors 89)) (:foreground "#336699" :background "white"))))
  '(org-level-1 ((((class color) (min-colors 89)) (:height 1.3 :weight bold :overline "#A7A7A7" :foreground "#3C3C3C" :background "#F0F0F0"))))
- '(org-level-2 ((((class color) (min-colors 89)) (:height 1.0 :weight bold :overline "#123555" :foreground "#123555" :background "#E5F4FB"))))
- '(org-level-3 ((((class color) (min-colors 89)) (:height 1.0 :weight bold :foreground "#005522" :background "#EFFFEF"))))
+ '(org-level-2 ((((class color) (min-colors 89)) (:height 1.2 :weight bold :overline "#123555" :foreground "#123555" :background "#E5F4FB"))))
+ '(org-level-3 ((((class color) (min-colors 89)) (:height 1.1 :weight bold :foreground "#005522" :background "#EFFFEF"))))
  '(org-level-4 ((((class color) (min-colors 89)) (:height 1.0 :weight bold :slant normal :foreground "#EA6300"))))
  '(org-level-5 ((((class color) (min-colors 89)) (:height 1.0 :weight bold :slant normal :foreground "#E3258D"))))
  '(org-level-6 ((((class color) (min-colors 89)) (:height 1.0 :weight bold :slant italic :foreground "#0077CC"))))

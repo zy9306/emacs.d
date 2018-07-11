@@ -5,6 +5,7 @@
       '(
         org-beginning-of-line
         org-end-of-line
+        org-metaright
         org-self-insert-command
         ))
 
