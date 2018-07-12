@@ -17,8 +17,8 @@
   (global-set-key (kbd "C-h r") 'helm-info-emacs)
   (global-set-key (kbd "C-h C-l") 'helm-locate-library)
   (global-set-key (kbd "C-c f") 'helm-recentf)
-  (global-set-key (kbd "C-c h d a") 'helm-do-ag)
-  (global-set-key (kbd "C-c h s i") 'helm-semantic-or-imenu)
+  (global-set-key (kbd "C-c h a") 'helm-do-ag)
+  (global-set-key (kbd "C-c h s") 'helm-semantic-or-imenu)
   (global-set-key (kbd "C-c h i") 'helm-imenu)
 
   (substitute-key-definition 'find-tag 'helm-etags-select global-map)
