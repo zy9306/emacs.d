@@ -16,6 +16,7 @@
 
 ;; 启动时最大化
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(global-set-key (kbd "C-x 5 s") 'select-frame-by-name)
 
 ;;; 也可以在启动之后运行 package-install-selected-packages
 (require-package 'spacemacs-theme)
