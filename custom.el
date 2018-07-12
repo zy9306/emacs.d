@@ -14,6 +14,8 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/elpa-mirror")
 
+;; 启动时最大化
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;;; 也可以在启动之后运行 package-install-selected-packages
 (require-package 'spacemacs-theme)
