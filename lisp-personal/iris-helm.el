@@ -4,6 +4,7 @@
   :ensure helm-ag
   :ensure helm-descbinds
   :ensure helm-swoop
+  :ensure helm-directory
   :config
   (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "C-x C-m") 'helm-M-x)
@@ -36,6 +37,11 @@
   (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
   (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
   (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
+
+  ;; helm-directory
+  (define-key global-map (kbd "C-c h d") 'helm-directory)
+  (setq helm-directory-basedir "~/")
+  (setq helm-directory-basedir-list '("~/usr/local/" "~/etc/"))
 
   (setq projectile-completion-system 'helm)
   (helm-descbinds-mode)
