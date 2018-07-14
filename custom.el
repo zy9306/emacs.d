@@ -59,6 +59,18 @@
 (use-package unicad)
 
 
+;; 设置projectile忽略的文件及文件夹
+(use-package projectile
+  :ensure t
+  :config
+  ;; 默认已忽略文件夹 (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work")
+  (setq projectile-globally-ignored-directories
+        (append '() projectile-globally-ignored-directories))
+  (setq projectile-globally-ignored-files
+        (append '("*.pyc") projectile-globally-ignored-files)))
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
