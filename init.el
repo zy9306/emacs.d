@@ -54,7 +54,7 @@
 (require 'init-themes)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
-(require 'init-dired)
+;; (require 'init-dired) ;; 不需要diredfl了
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-uniquify)
