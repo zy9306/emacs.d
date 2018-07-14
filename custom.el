@@ -69,6 +69,21 @@
   (setq projectile-globally-ignored-files
         (append '("*.pyc") projectile-globally-ignored-files)))
 
+;; 更改自动备份文件位置及设置删除时间
+(make-directory "~/.emacs.d/backup-files/" t)
+(setq backup-directory-alist
+      `((".*" . "~/.emacs.d/backup-files/")))
+(setq auto-save-file-name-transforms
+      `((".*" "~/.emacs.d/backup-files/" t)))
+(message "Deleting old backup files...")
+(let ((week (* 60 60 24 7))
+      (current (float-time (current-time))))
+  (dolist (file (directory-files "~/.emacs.d/backup-files/" t))
+    (when (and (backup-file-name-p file)
+               (> (- current (float-time (fifth (file-attributes file))))
+                  week))
+      (message "%s" file)
+      (delete-file file))))
 
 
 
