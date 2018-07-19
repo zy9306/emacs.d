@@ -14,12 +14,13 @@
 ;;; 以上弃用,原因,无法正常缩放中文字体
 
 ;; 以下方法可用,但有缺陷,字体大小无法调到合适,11号太大,10号又偏小
+;; Source Code Pro不是中英文等宽的,高度会不一致
 (if (display-graphic-p)
     (progn
       (set-face-attribute 'default nil :font
-                          "文泉驿等宽微米黑 11")
+                          "Source Code Pro 11")
       (setq default-frame-alist
-            (append '((font . "文泉驿等宽微米黑 11")) default-frame-alist))
+            (append '((font . "Source Code Pro 11")) default-frame-alist))
       ))
 
 ;; 设置字符集

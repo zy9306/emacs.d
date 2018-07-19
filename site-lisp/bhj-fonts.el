@@ -2,7 +2,7 @@
 ;;; 修改face-font-rescale-alist增加所需设置的字体
 ;;; 修改qiang-set-font中的字体大小
 ;;; chinese-font-size-scale-alist中添加自定义的字体大小和缩放,文件最后20个你和40个a等宽为止
-;;; 困为文泉驿等宽微米黑本来就是中英文等宽字体,因此不要加到face-font-rescale-alist中
+;;; 因为文泉驿等宽微米黑本来就是中英文等宽字体,因此不要加到face-font-rescale-alist中
 
 
 (defun qiang-font-existsp (font)
@@ -28,7 +28,7 @@
       (insert (format "%s" english-font-size))
       (save-buffer)
       (kill-buffer)))
-  (setq face-font-rescale-alist `(;;("文泉驿等宽微米黑" . ,chinese-fonts-scale)
+  (setq face-font-rescale-alist `(("思源宋体 CN" . ,chinese-fonts-scale)
                                   ("Microsoft Yahei" . ,chinese-fonts-scale)
                                   ("Microsoft_Yahei" . ,chinese-fonts-scale)
                                   ("微软雅黑" . ,chinese-fonts-scale)
@@ -52,10 +52,10 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
      'default nil :font en-font)
     (condition-case font-error
         (progn
-          (set-face-font 'italic (font-spec :family "Courier New" :slant 'italic :weight 'normal :size (+ 0.0 english-font-size)))
-          (set-face-font 'bold-italic (font-spec :family "Courier New" :slant 'italic :weight 'bold :size (+ 0.0 english-font-size)))
+          (set-face-font 'italic (font-spec :family "Source Code Pro" :slant 'italic :weight 'normal :size (+ 0.0 english-font-size)))
+          (set-face-font 'bold-italic (font-spec :family "Source Code Pro" :slant 'italic :weight 'bold :size (+ 0.0 english-font-size)))
 
-          (set-fontset-font t 'symbol (font-spec :family "Courier New")))
+          (set-fontset-font t 'symbol (font-spec :family "Source Code Pro")))
       (error nil))
     (set-fontset-font t 'symbol (font-spec :family "Unifont") nil 'append)
     (set-fontset-font t nil (font-spec :family "DejaVu Sans"))
@@ -70,21 +70,22 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
   (shell-command-to-string "sawfish-client -e '(maximize-window (input-focus))'&"))
 
 
-(defvar bhj-english-fonts '("文泉驿等宽微米黑" "Monaco" "Consolas" "DejaVu Sans Mono" "Monospace" "Courier New"))
-(defvar bhj-chinese-fonts '("文泉驿等宽微米黑" "Microsoft Yahei" "Microsoft_Yahei" "微软雅黑" "黑体" "新宋体" "宋体"))
+(defvar bhj-english-fonts '("Source Code Pro" "文泉驿等宽微米黑" "Monaco" "Consolas" "DejaVu Sans Mono" "Monospace" "Courier New"))
+(defvar bhj-chinese-fonts '("文泉驿等宽微米黑" "思源宋体 CN" "Source Code Pro" "Microsoft Yahei" "Microsoft_Yahei" "微软雅黑" "黑体" "新宋体" "宋体"))
 
 (qiang-set-font
- bhj-english-fonts
- (if (file-exists-p "~/.config/system-config/emacs-font-size")
-     (save-excursion
-       (find-file "~/.config/system-config/emacs-font-size")
-       (goto-char (point-min))
-       (let ((monaco-font-size (read (current-buffer))))
-         (kill-buffer (current-buffer))
-         (if (numberp monaco-font-size)
-             monaco-font-size
-           10.5)))
-   10.5)
+ bhj-english-fonts 11.5
+ ;; 直接指定字号了,不从文件读取,没有什么意义
+ ;; (if (file-exists-p "~/.config/system-config/emacs-font-size")
+ ;;     (save-excursion
+ ;;       (find-file "~/.config/system-config/emacs-font-size")
+ ;;       (goto-char (point-min))
+ ;;       (let ((monaco-font-size (read (current-buffer))))
+ ;;         (kill-buffer (current-buffer))
+ ;;         (if (numberp monaco-font-size)
+ ;;             monaco-font-size
+ ;;           11.5)))
+ ;;   11.5)
  bhj-chinese-fonts)
 
 (defvar chinese-font-size-scale-alist nil)
@@ -97,7 +98,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
  ((and (boundp '*is-a-win*) *is-a-win*)
   (setq chinese-font-size-scale-alist '((11.5 . 1.25) (16 . 1.25))))
  (t ;; is a linux:-)
-  (setq chinese-font-size-scale-alist '((10.5 . 1.25) (12.5 . 1.25) (14 . 1.25) (16 . 1.25) (20 . 1.25)))))
+  (setq chinese-font-size-scale-alist '((11.5 . 1.25) (12.5 . 1.25) (14 . 1.25) (16 . 1.25) (20 . 1.25)))))
 
 (defvar bhj-english-font-size-steps '(9 10.5 11.5 12.5 14 16 18 20 22))
 (defun bhj-step-frame-font-size (step)
