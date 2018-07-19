@@ -143,10 +143,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(highlight ((t (:background "#E3E3F2" :foreground "#655370"))))
- '(region ((t (:background "light coral" :foreground "#FFFFFF"))))
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
  '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(imenu-list-entry-face-2 ((t (:inherit imenu-list-entry-face :foreground "dark cyan"))))
+ '(neo-vc-up-to-date-face ((t (:foreground "#333333"))))
+ '(region ((t (:background "light coral" :foreground "#FFFFFF"))))
  '(spaceline-highlight-face ((t (:background "salmon" :foreground "#3E3D31" :inherit (quote mode-line))))))
 
 
