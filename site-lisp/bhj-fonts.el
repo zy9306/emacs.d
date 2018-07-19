@@ -74,7 +74,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 (defvar bhj-chinese-fonts '("文泉驿等宽微米黑" "思源宋体 CN" "Source Code Pro" "Microsoft Yahei" "Microsoft_Yahei" "微软雅黑" "黑体" "新宋体" "宋体"))
 
 (qiang-set-font
- bhj-english-fonts 11.5
+ bhj-english-fonts 10.5
  ;; 直接指定字号了,不从文件读取,没有什么意义
  ;; (if (file-exists-p "~/.config/system-config/emacs-font-size")
  ;;     (save-excursion
@@ -98,7 +98,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
  ((and (boundp '*is-a-win*) *is-a-win*)
   (setq chinese-font-size-scale-alist '((11.5 . 1.25) (16 . 1.25))))
  (t ;; is a linux:-)
-  (setq chinese-font-size-scale-alist '((11.5 . 1.25) (12.5 . 1.25) (14 . 1.25) (16 . 1.25) (20 . 1.25)))))
+  (setq chinese-font-size-scale-alist '((10.5 . 1.25) (12.5 . 1.25) (14 . 1.25) (16 . 1.25) (20 . 1.25)))))
 
 (defvar bhj-english-font-size-steps '(9 10.5 11.5 12.5 14 16 18 20 22))
 (defun bhj-step-frame-font-size (step)

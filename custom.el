@@ -143,7 +143,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(highlight ((t (:background "#E3E3F2" :foreground "#655370"))))
- '(region ((t (:background "light coral"))))
+ '(region ((t (:background "light coral" :foreground "#FFFFFF"))))
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
  '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(imenu-list-entry-face-2 ((t (:inherit imenu-list-entry-face :foreground "dark cyan"))))
@@ -227,3 +227,6 @@
 (use-package origami-parsers)
 (use-package iris-imenu-list)
 (use-package iris-elpa-mirror)
+
+;; 光标为横线
+(set-default 'cursor-type 'hbar)
