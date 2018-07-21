@@ -19,7 +19,9 @@
 (global-set-key (kbd "C-x 5 s") 'select-frame-by-name)
 
 ;;; 也可以在启动之后运行 package-install-selected-packages
-;;; 如果是暗色主题,选zenburn-theme或者material-theme的暗色,白色主题选material-theme,主题上不要做太多折腾了,没什么意义
+;;; 如果是暗色主题,选zenburn-theme或者material-theme的暗色
+;;; 白色主题选leuven或material-theme,主题上不要做太多折腾了,没什么意义
+;;; org-mode用material的,区分light和正常暗色,见底下org-mode设置
 (require-package 'zenburn-theme)
 (require-package 'material-theme)
 (require-package 'spacemacs-theme)
@@ -100,7 +102,7 @@
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(company-tooltip-idle-delay 0.05)
- '(custom-enabled-themes (quote (material)))
+ '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes
    (quote
     ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "4d8578f86c9de7531ba8519edd0a1f6be090a6ef1e093feabfd5263e454882fb" "83e7d353e2c2c4dde0de89dc824b51fa56b1bc2241da78de06eb641b84bb629f" "4b2b038b98383459c1cf99ee7129769017d5da44959bf1efe3ce34208a353bb7" "ddac41e96a403e46ad595499148b12512610927a77f8810e74e8ce8205cf4e01" "241ddb7865c44fc66e7f862ff4210e8497c994f0003f698861ffcee01ee77e68" "8a8d606a19d903bbf54c2cae04b8c590fbee05b58b1f3d64f749d57a8d995173" "8e6abd8c511032be7af6223f06bf3d06d5e7b63c0ffb946e8a0d1656dd3944c8" "62f8ada330231b1bc36f5fb902bea1d6aa024c4ab1817b021aa62824629026b6" "3ba8e07ef9e4b1154fb0d8266b1093313e2c72e471e2ef85db6cb90754d093c3" "9ed36b35eb2f1eed0f992a0ab1150859d38fce9facfe0dfeb5bf0cf578d8e24f" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
@@ -148,8 +150,6 @@
  '(flycheck-error ((t (:underline "#B71C1C"))))
  '(flycheck-info ((t (:underline "#2196f3"))))
  '(flycheck-warning ((t (:underline "#FF5722"))))
- ;; '(neo-vc-default-face ((t (:foreground "black"))))
- ;; '(neo-vc-up-to-date-face ((t (:foreground "#333333"))))
  '(region ((t (:background "light coral" :foreground "#FFFFFF"))))
  '(spaceline-highlight-face ((t (:background "salmon" :foreground "#3E3D31" :inherit (quote mode-line))))))
 
@@ -234,6 +234,12 @@
 (if (display-graphic-p)
     (use-package bhj-fonts)
   (use-package iris-font))
+
+;; org-theme
+;; 1.浅色主题下使用
+(use-package iris-material-org-theme-light)
+;; 2.深色主题下使用
+;;(use-package iris-material-org-theme-dark)
 
 
 ;; 光标为横线
