@@ -148,8 +148,8 @@
  '(flycheck-error ((t (:underline "#B71C1C"))))
  '(flycheck-info ((t (:underline "#2196f3"))))
  '(flycheck-warning ((t (:underline "#FF5722"))))
- '(neo-vc-default-face ((t (:foreground "black"))))
- '(neo-vc-up-to-date-face ((t (:foreground "#333333"))))
+ ;; '(neo-vc-default-face ((t (:foreground "black"))))
+ ;; '(neo-vc-up-to-date-face ((t (:foreground "#333333"))))
  '(region ((t (:background "light coral" :foreground "#FFFFFF"))))
  '(spaceline-highlight-face ((t (:background "salmon" :foreground "#3E3D31" :inherit (quote mode-line))))))
 

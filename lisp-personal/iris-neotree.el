@@ -7,7 +7,7 @@
   ;;; For users who want to use the icons theme. Pls make sure you have installed the all-the-icons package and its fonts.
   ;;; neotree comes with default bindings of | for vertical split and - for horizontal split.在新缓冲区打开文件
   (global-set-key [f8] 'neotree-toggle)
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-theme (if (display-graphic-p) 'ascii 'arrow))
 
   ;; 显示版本控制信息
   ;; (setq neo-vc-integration '(face char))
