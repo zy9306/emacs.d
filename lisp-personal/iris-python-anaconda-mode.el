@@ -29,7 +29,9 @@
   (add-hook 'python-mode-hook 'my-python-mode-hook)
   ;; 设置ipython
   (setq python-shell-interpreter "ipython"
-        python-shell-interpreter-args "-i --simple-prompt"))
+        python-shell-interpreter-args "-i --simple-prompt")
+
+  (add-hook 'python-mode-hook 'highlight-indentation-mode))
 
 
 ;; 补充相关语法高亮
