@@ -1,0 +1,10 @@
+* issues
+** 0. 坚果云中另外存档一份myelpa-stable,如果在线更新失败,使用本地的仓库
+*** 修改 init-preload-local中的路径即可
+** 1. projectile 1.1 prefix-key 变更为C-c C-p (20180724.1018)
+*** https://github.com/bbatsov/projectile/commit/bc5a96cefb7a76361df17a0b8262152bfde220b5
+*** 目前本地使用的是20180630.111版本,一切正常
+*** 若日后要升级,考虑下如何改prefix-key
+** 2. docker-20180728.1948 引起了较大的bug,直接init.el全报错
+*** 目前弃用并关注该issues https://github.com/Silex/docker.el/issues/86
+*** 本地存档的docker-20180524.506正常
