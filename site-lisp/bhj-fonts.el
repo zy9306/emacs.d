@@ -22,12 +22,13 @@
                        &optional chinese-fonts-scale
                        )
   (setq chinese-fonts-scale (or chinese-fonts-scale 1.2))
-  (save-excursion
-    (with-current-buffer (find-file-noselect "~/.config/system-config/emacs-font-size")
-      (delete-region (point-min) (point-max))
-      (insert (format "%s" english-font-size))
-      (save-buffer)
-      (kill-buffer)))
+  ;; 不需要存在本地
+  ;; (save-excursion
+  ;;   (with-current-buffer (find-file-noselect "~/.config/system-config/emacs-font-size")
+  ;;     (delete-region (point-min) (point-max))
+  ;;     (insert (format "%s" english-font-size))
+  ;;     (save-buffer)
+  ;;     (kill-buffer)))
   (setq face-font-rescale-alist `(("思源宋体 CN" . ,chinese-fonts-scale)
                                   ("Microsoft Yahei" . ,chinese-fonts-scale)
                                   ("Microsoft_Yahei" . ,chinese-fonts-scale)
