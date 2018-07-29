@@ -5,9 +5,12 @@
 ;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
 ;;                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
-(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
- 
+;; (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+;;                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+
+;; 本地仓库
+(setq package-archives '(("myelpa" . "~/Nutstore/myelpa/")))
+
 (package-initialize) ;; You might already have this line
 
 (provide 'init-preload-local)
