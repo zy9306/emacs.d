@@ -4,6 +4,7 @@
   :ensure pyvenv
   :ensure auto-virtualenv
   :ensure company-anaconda
+  :ensure highlight-indentation
   :config
   (add-hook 'python-mode-hook 'anaconda-mode)
   (add-hook 'python-mode-hook 'anaconda-eldoc-mode)

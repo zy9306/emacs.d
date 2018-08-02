@@ -35,6 +35,8 @@
 (require-package 'all-the-icons)
 (require-package 'neotree)
 
+(require-package 'highlight-indentation)
+
 
 ;; https://github.com/TheBB/spaceline
 (require 'spaceline-config)
@@ -116,7 +118,7 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
+    (highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(session-use-package t nil (session))
