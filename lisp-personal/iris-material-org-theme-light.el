@@ -1,13 +1,13 @@
-(deftheme material-light
+(deftheme material-light-custom
   "Created 2018-07-21.")
 
 (custom-theme-set-variables
- 'material-light
+ 'material-light-custom
  '(ansi-color-names-vector ["#212121" "#B71C1C" "#558b2f" "#FFA000" "#2196f3" "#4527A0" "#00796b" "#FAFAFA"])
  '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold]))
 
 (custom-theme-set-faces
- 'material-light
+ 'material-light-custom
  '(org-agenda-structure ((((class color) (min-colors 89)) (:foreground "#00796b" :bold t))))
  '(org-agenda-date ((((class color) (min-colors 89)) (:foreground "#2196f3" :underline nil))))
  '(org-agenda-done ((((class color) (min-colors 89)) (:foreground "#558b2f"))))
