@@ -36,9 +36,10 @@
  '(org-warning ((((class color) (min-colors 89)) (:weight bold :foreground "#f36c60"))))
  '(org-block-begin-line ((((class color) (min-colors 89)) (:foreground "#b3e5fc" :background "#1e2930" :box (:style released-button)))))
  '(org-block-end-line ((((class color) (min-colors 89)) (:foreground "#b3e5fc" :background "#1e2930" :box (:style released-button)))))
- '(org-level-1 ((((class color) (min-colors 89)) (:inherit outline-1 :background "#455A64" :weight bold :box (:style released-button) :height 1.3))))
- '(org-level-2 ((((class color) (min-colors 89)) (:inherit outline-2 :background "#35575b" :box (:style released-button) :height 1.2))))
- '(org-level-3 ((((class color) (min-colors 89)) (:inherit outline-3 :height 1.1))))
+ ;; level1,2,3的height原本分别为1.3,1.2,1.1
+ '(org-level-1 ((((class color) (min-colors 89)) (:inherit outline-1 :background "#455A64" :weight bold :box (:style released-button) :height 1.0))))
+ '(org-level-2 ((((class color) (min-colors 89)) (:inherit outline-2 :background "#35575b" :box (:style released-button) :height 1.0))))
+ '(org-level-3 ((((class color) (min-colors 89)) (:inherit outline-3 :height 1.0))))
  '(org-level-4 ((((class color) (min-colors 89)) (:inherit outline-4 :height 1.0))))
  '(org-level-5 ((((class color) (min-colors 89)) (:inherit outline-5))))
  '(org-level-6 ((((class color) (min-colors 89)) (:inherit outline-6))))
