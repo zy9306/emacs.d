@@ -96,8 +96,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
  '(beacon-color "#d54e53")
  '(company-idle-delay 0.05)
  '(company-minimum-prefix-length 2)
@@ -118,7 +116,7 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
+    (treemacs-projectile treemacs pyvenv highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(session-use-package t nil (session))
