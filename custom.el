@@ -33,7 +33,7 @@
 (require-package 'buffer-move)
 
 (require-package 'all-the-icons)
-(require-package 'neotree)
+;; (require-package 'neotree)
 
 (require-package 'highlight-indentation)
 
@@ -225,7 +225,8 @@
 ;; elpy在代码折叠时非常卡,使用anaconda代替
 ;;(use-package iris-python)
 (use-package iris-python-anaconda-mode)
-(use-package iris-neotree)
+;; treemacs替代
+;; (use-package iris-neotree)
 (use-package iris-avy)
 ;;(use-package iris-theme) ;; 只有在用spacemacs-theme时才用这个,用其它主题的话不需要了
 (use-package iris-find-temp-file)
@@ -234,6 +235,8 @@
 (use-package origami-parsers)
 (use-package iris-imenu-list)
 (use-package iris-elpa-mirror)
+
+(use-package iris-treemacs)
 
 ;; bhj-fonts在终端下会报错
 (if (display-graphic-p)
