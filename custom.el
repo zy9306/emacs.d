@@ -219,7 +219,8 @@
 
 
 (use-package iris-edit)
-(use-package iris-helm)
+;;(use-package iris-helm)
+(use-package iris-ivy)
 ;; elpy在代码折叠时非常卡,使用anaconda代替
 ;;(use-package iris-python)
 (use-package iris-python-anaconda-mode)
