@@ -64,6 +64,12 @@
 (use-package unicad)
 
 
+(use-package xclip
+  :ensure t
+  :config
+  (xclip-mode 1))
+
+
 ;; 设置projectile忽略的文件及文件夹
 (use-package projectile
   :ensure t
