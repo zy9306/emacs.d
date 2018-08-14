@@ -264,3 +264,10 @@
 ;; 另外python中and or等都会显示成符号,关闭
 ;; 不知为何,不生效
 ;; (global-prettify-symbols-mode 0)
+
+;; 终端下也可以显示文件修改信息
+;; 在gui下也这样设置,diff-hl-margin-mode显示得更加清楚,但是会在左侧增加一个边距
+;; 后期如果启用其它主题,显示本来就很清楚的话,就把gui下的diff-hl-margin-mode改为nil
+(if (display-graphic-p)
+    (diff-hl-margin-mode 1)
+  (diff-hl-margin-mode 1))
