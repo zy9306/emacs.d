@@ -63,7 +63,8 @@
   (require 'use-package))
 (use-package unicad)
 
-
+;; 依赖于xclip
+;; sudo apt-get install xclip
 (use-package xclip
   :ensure t
   :config
