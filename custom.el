@@ -271,3 +271,6 @@
 (if (display-graphic-p)
     (diff-hl-margin-mode 1)
   (diff-hl-margin-mode 1))
+
+;; 打开文件时默认只读
+(add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
