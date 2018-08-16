@@ -272,5 +272,5 @@
     (diff-hl-margin-mode 1)
   (diff-hl-margin-mode 1))
 
-;; 打开文件时默认只读
-(add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
+;; 打开文件时默认只读,但是只读模式在安装包时偶尔会遇到编译问题,暂时取消
+;; (add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
