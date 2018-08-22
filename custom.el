@@ -276,3 +276,6 @@
 
 ;; 打开文件时默认只读,但是只读模式在安装包时偶尔会遇到编译问题,暂时取消
 ;; (add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
+
+(global-set-key (kbd "C-0") (quote scroll-up-line))
+(global-set-key (kbd "C-9") (quote scroll-down-line))
