@@ -274,5 +274,9 @@
 ;; 对特定的mode打开只读(全局只读时安装package时会出现编译问题)
 (add-hook 'python-mode-hook (lambda () (setq buffer-read-only t)))
 
+;; init-editing-utils.el已经在after-init-hook全局启用了global-auto-revert-mode,但没起作用,auto-revert-mode依然是关闭的
+;; auto-revert-mode在after-init-hook添加都不起作用,原因待查,目前对特定的mode启用
+(add-hook 'python-mode-hook (lambda () (auto-revert-mode t)))
+
 (global-set-key (kbd "C-0") (quote scroll-up-line))
 (global-set-key (kbd "C-9") (quote scroll-down-line))
