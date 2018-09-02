@@ -155,9 +155,7 @@
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
  '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(imenu-list-entry-face-2 ((t (:inherit imenu-list-entry-face :foreground "dark cyan"))))
- ;; '(region ((t (:background "light coral" :foreground "#FFFFFF"))))
- ;; '(spaceline-highlight-face ((t (:background "salmon" :foreground "#3E3D31" :inherit (quote mode-line)))))
- )
+ '(vertical-border ((t (:background "white" :foreground "white")))))
 
 
 
