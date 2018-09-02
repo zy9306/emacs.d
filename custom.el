@@ -271,8 +271,8 @@
     (diff-hl-margin-mode 1)
   (diff-hl-margin-mode 1))
 
-;; 打开文件时默认只读,但是只读模式在安装包时偶尔会遇到编译问题,暂时取消
-;; (add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
+;; 对特定的mode打开只读(全局只读时安装package时会出现编译问题)
+(add-hook 'python-mode-hook (lambda () (setq buffer-read-only t)))
 
 (global-set-key (kbd "C-0") (quote scroll-up-line))
 (global-set-key (kbd "C-9") (quote scroll-down-line))
