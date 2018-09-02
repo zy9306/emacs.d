@@ -259,6 +259,9 @@
 ;; 如果值为1,display "lambda" as "λ"
 ;; 另外python中and or等都会显示成符号,关闭
 ;; 不知为何,不生效
+;; 注释掉 init-editing-utils.el 中的以下代码可以生效
+;; (when (fboundp 'global-prettify-symbols-mode)
+;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 ;; (global-prettify-symbols-mode 0)
 
 ;; 终端下也可以显示文件修改信息

@@ -90,8 +90,9 @@
 
 
 
-(when (fboundp 'global-prettify-symbols-mode)
-  (add-hook 'after-init-hook 'global-prettify-symbols-mode))
+;; 取消将"lambda"等显示为符号"λ"
+;; (when (fboundp 'global-prettify-symbols-mode)
+;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 
 
 (require-package 'undo-tree)
