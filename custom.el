@@ -65,6 +65,13 @@
   (xclip-mode 1))
 
 
+(use-package real-auto-save
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'real-auto-save-mode)
+  (setq real-auto-save-interval 1))
+
+
 ;; 设置projectile忽略的文件及文件夹
 (use-package projectile
   :ensure t
@@ -117,7 +124,7 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (moe-theme ranger dockerfile-mode treemacs-projectile treemacs pyvenv highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
+    (real-auto-save moe-theme ranger dockerfile-mode treemacs-projectile treemacs pyvenv highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(session-use-package t nil (session))
@@ -271,8 +278,9 @@
 (add-hook 'python-mode-hook (lambda () (setq buffer-read-only t)))
 
 ;; init-editing-utils.el已经在after-init-hook全局启用了global-auto-revert-mode,但没起作用,auto-revert-mode依然是关闭的
-;; auto-revert-mode在after-init-hook添加都不起作用,原因待查,目前对特定的mode启用
-(add-hook 'python-mode-hook (lambda () (auto-revert-mode t)))
+;; auto-revert-mode在after-init-hook添加都不起作用,原因待查,目前对特定的mode启用,也可以在prog-mode-hook启用,这样所有buffer都能起作用
+;; (add-hook 'python-mode-hook (lambda () (auto-revert-mode t)))
+(add-hook 'prog-mode-hook (lambda () (auto-revert-mode t)))
 
 (global-set-key (kbd "C-0") (quote scroll-up-line))
 (global-set-key (kbd "C-9") (quote scroll-down-line))
