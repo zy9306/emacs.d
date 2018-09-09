@@ -124,7 +124,7 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (company-go go-eldoc go-mode neotree real-auto-save moe-theme ranger dockerfile-mode treemacs-projectile treemacs pyvenv highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
+    (whitespace-cleanup-mode company-go go-eldoc go-mode neotree real-auto-save moe-theme ranger dockerfile-mode treemacs-projectile treemacs pyvenv highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(session-use-package t nil (session))
@@ -284,5 +284,16 @@
 ;; (add-hook 'python-mode-hook (lambda () (auto-revert-mode t)))
 (add-hook 'prog-mode-hook (lambda () (auto-revert-mode t)))
 
+
+;; 空白行空格问题处理
+;; whitespace-cleanup函数可用,但不绑定whitespace-cleanup-mode到任何hook
+;; whitespace-cleanup-mode会在自动保存的时候执行whitespace-cleanup,导致光标在空白行的一直回行首
+;; show-trailing-whitespace高亮显示空白行的空格
+(use-package whitespace-cleanup-mode
+  :ensure t)
+(setq-default show-trailing-whitespace t)
+
+
 (global-set-key (kbd "C-0") (quote scroll-up-line))
 (global-set-key (kbd "C-9") (quote scroll-down-line))
+
