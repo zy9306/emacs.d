@@ -293,7 +293,8 @@
   :ensure t)
 (setq-default show-trailing-whitespace t)
 ;; 所有行尾及新行显示$,不能直接启用(global-whitespace-newline-mode t),否则会触发whitespace-mode
-(add-hook 'prog-mode-hook (lambda () (whitespace-newline-mode t)))
+;; 和show-trailing-whitespace只能二选一,且由于显示过多的$导致看起来比较零乱,禁用
+;; (add-hook 'prog-mode-hook (lambda () (whitespace-newline-mode t)))
 
 
 (global-set-key (kbd "C-0") (quote scroll-up-line))
