@@ -292,8 +292,9 @@
 (use-package whitespace-cleanup-mode
   :ensure t)
 (setq-default show-trailing-whitespace t)
+;; 所有行尾及新行显示$,不能直接启用(global-whitespace-newline-mode t),否则会触发whitespace-mode
+(add-hook 'prog-mode-hook (lambda () (whitespace-newline-mode t)))
 
 
 (global-set-key (kbd "C-0") (quote scroll-up-line))
 (global-set-key (kbd "C-9") (quote scroll-down-line))
-
