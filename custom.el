@@ -159,6 +159,8 @@
  '(flycheck-error ((t (:underline "#B71C1C"))))
  '(flycheck-info ((t (:underline "#2196f3"))))
  '(flycheck-warning ((t (:underline "#FF5722"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "dark magenta" :slant italic))))
+ '(font-lock-comment-face ((t (:foreground "dark magenta" :slant italic))))
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
  '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(imenu-list-entry-face-2 ((t (:inherit imenu-list-entry-face :foreground "dark cyan"))))
