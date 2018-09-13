@@ -290,6 +290,9 @@
 (add-hook 'prog-mode-hook (lambda () (auto-revert-mode t)))
 
 
+(global-hl-line-mode t)
+
+
 ;; 空白行空格问题处理
 ;; whitespace-cleanup函数可用,但不绑定whitespace-cleanup-mode到任何hook
 ;; whitespace-cleanup-mode会在自动保存的时候执行whitespace-cleanup,导致光标在空白行的一直回行首
