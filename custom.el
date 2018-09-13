@@ -255,6 +255,8 @@
 (use-package iris-treemacs)
 (use-package iris-dockerfile-mode)
 
+(use-package iris-windows)
+
 ;; bhj-fonts在终端下会报错
 (if (display-graphic-p)
     (use-package bhj-fonts)
