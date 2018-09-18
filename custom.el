@@ -72,16 +72,6 @@
   (setq real-auto-save-interval 1))
 
 
-;; 设置projectile忽略的文件及文件夹
-(use-package projectile
-  :ensure t
-  :config
-  ;; 默认已忽略文件夹 (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work")
-  (setq projectile-globally-ignored-directories
-        (append '() projectile-globally-ignored-directories))
-  (setq projectile-globally-ignored-files
-        (append '("*.pyc") projectile-globally-ignored-files)))
-
 ;; 更改自动备份文件位置及设置删除时间
 (make-directory "~/.emacs.d/backup-files/" t)
 (setq backup-directory-alist
@@ -256,6 +246,8 @@
 (use-package iris-dockerfile-mode)
 
 (use-package iris-windows)
+
+(use-package iris-projectile)
 
 ;; bhj-fonts在终端下会报错
 (if (display-graphic-p)
