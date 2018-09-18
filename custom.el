@@ -145,12 +145,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#5f5f5f" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "adobe" :family "Source Code Pro"))))
+ '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#233333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "adobe" :family "Source Code Pro"))))
  '(flycheck-error ((t (:underline "#B71C1C"))))
  '(flycheck-info ((t (:underline "#2196f3"))))
  '(flycheck-warning ((t (:underline "#FF5722"))))
- '(font-lock-comment-delimiter-face ((t (:foreground "dark magenta" :slant italic))))
- '(font-lock-comment-face ((t (:foreground "dark magenta" :slant italic))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#777777" :slant italic))))
+ '(font-lock-comment-face ((t (:foreground "#777777" :slant italic))))
  '(font-lock-function-name-face ((t (:foreground "#ef2929" :weight bold))))
  '(font-lock-keyword-face ((t (:foreground "#00af00" :weight bold))))
  '(font-lock-type-face ((t (:foreground "#18b2b2" :weight bold))))
