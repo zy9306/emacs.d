@@ -50,13 +50,13 @@ Install the \"sqlparse\" (Python) package to get \"sqlformat\"."
   (interactive "r")
   (unless (use-region-p)
     (setq beg (save-excursion
-		        (backward-paragraph)
+		(backward-paragraph)
                 (skip-syntax-forward " >")
-		        (point))
+		(point))
           end (save-excursion
-		        (forward-paragraph)
+		(forward-paragraph)
                 (skip-syntax-backward " >")
-		        (point))))
+		(point))))
   (shell-command-on-region beg end "sqlformat -r -" nil t "*sqlformat-errors*" t))
 
 (after-load 'sql
