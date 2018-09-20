@@ -9,28 +9,19 @@
   (global-set-key (kbd "C-x 1") 'switch-window-then-maximize)
   (global-set-key (kbd "C-x 2") 'switch-window-then-split-below)
   (global-set-key (kbd "C-x 3") 'switch-window-then-split-right)
-  (global-set-key (kbd "C-x 0") 'switch-window-then-delete)
+  (global-set-key (kbd "C-x c 0") 'switch-window-then-delete)
 
-  (global-set-key (kbd "C-x 4 d") 'switch-window-then-dired)
-  (global-set-key (kbd "C-x 4 f") 'switch-window-then-find-file)
-  (global-set-key (kbd "C-x 4 m") 'switch-window-then-compose-mail)
-  (global-set-key (kbd "C-x 4 r") 'switch-window-then-find-file-read-only)
-
+  (global-set-key (kbd "C-x 4 C-d") 'switch-window-then-dired)
   (global-set-key (kbd "C-x 4 C-f") 'switch-window-then-find-file)
+  (global-set-key (kbd "C-x 4 C-m") 'switch-window-then-compose-mail)
+  (global-set-key (kbd "C-x 4 C-r") 'switch-window-then-find-file-read-only)
   (global-set-key (kbd "C-x 4 C-o") 'switch-window-then-display-buffer)
-
-  (global-set-key (kbd "C-x 4 0") 'switch-window-then-kill-buffer)
+  (global-set-key (kbd "C-x 4 C-0") 'switch-window-then-kill-buffer)
 
   (unless (memq window-system '(nt w32))
     (windmove-default-keybindings 'control)))
 
-
-;; ace-window和switch-window功能上相近,选其一即可
-;; https://github.com/abo-abo/ace-window/tree/master
-(use-package ace-window
-  :ensure t)
-
-
+;; 以下来自init-windows.el
 (defun split-window-horizontally-instead ()
   "Kill any other windows and re-split such that the current window is on the top half of the frame."
   (interactive)
@@ -52,7 +43,6 @@
 (global-set-key (kbd "C-x |") 'split-window-horizontally-instead)
 (global-set-key (kbd "C-x _") 'split-window-vertically-instead)
 
-
 ;; 如果设置了,该窗口的内容不会被其它buffer覆盖,该窗口只用于显示该buffer
 (defun sanityinc/toggle-current-window-dedication ()
   "Toggle whether the current window is dedicated to its current buffer."
@@ -65,6 +55,12 @@
              (buffer-name))))
 
 (global-set-key (kbd "C-c <down>") 'sanityinc/toggle-current-window-dedication)
+
+
+;; ace-window和switch-window功能上相近,选其一即可
+;; https://github.com/abo-abo/ace-window/tree/master
+(use-package ace-window
+  :ensure t)
 
 
 (provide 'iris-windows)
