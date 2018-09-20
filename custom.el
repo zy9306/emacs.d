@@ -114,7 +114,7 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (whitespace-cleanup-mode company-go go-eldoc go-mode neotree real-auto-save moe-theme ranger dockerfile-mode treemacs-projectile treemacs pyvenv highlight-indentation material-theme zenburn-theme helm-directory paradox imenu-list company-anaconda anaconda-mode find-temp-file spacemacs-theme helm-swoop helm-descbinds helm-ag helm-projectile helm spaceline counsel-projectile buffer-move auto-virtualenv elpy use-package nlinum beacon mode-line-bell vlf list-unicode-display unfill mmm-mode default-text-scale session switch-window company-quickhelp company ivy-xref projectile counsel ivy-historian ivy smex flycheck-color-mode-line flycheck ibuffer-vc anzu diff-hl diredfl disable-mouse dimmer command-log-mode scratch diminish wgrep exec-path-from-shell fullframe)))
+    (highlight-indentation all-the-icons buffer-move paradox use-package spaceline moe-theme spacemacs-theme material-theme zenburn-theme uptimes dotenv-mode daemons dsvn htmlize lua-mode gnuplot flycheck-ledger ledger-mode origami regex-tool cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight aggressive-indent immortal-scratch auto-compile ipretty elisp-slime-nav paredit-everywhere paredit nginx-mode company-terraform terraform-mode yaml-mode restclient httprepl css-eldoc skewer-less sass-mode rainbow-mode tagedit org-pomodoro writeroom-mode org-cliplink add-node-modules-path skewer-mode js-comint xref-js2 prettier-js typescript-mode coffee-mode js2-mode json-mode csv-mode markdown-mode cmd-to-echo alert magithub github-clone bug-reference-github yagist git-messenger git-commit magit git-timemachine gitconfig-mode gitignore-mode git-blamed vc-darcs darcsum browse-at-remote diff-hl guide-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors avy expand-region browse-kill-ring symbol-overlay undo-tree rainbow-delimiters beacon vlf list-unicode-display unfill mmm-mode default-text-scale session company-quickhelp company smex flycheck-color-mode-line flycheck ibuffer-vc wgrep-ag ag anzu disable-mouse command-log-mode scratch diminish wgrep exec-path-from-shell cl-lib fullframe seq whitespace-cleanup-mode company-go go-eldoc go-mode neotree real-auto-save ranger dockerfile-mode treemacs-projectile treemacs pyvenv helm-directory imenu-list company-anaconda anaconda-mode find-temp-file helm-swoop helm-descbinds helm-ag helm-projectile helm counsel-projectile auto-virtualenv elpy nlinum mode-line-bell switch-window ivy-xref projectile counsel ivy-historian ivy diredfl dimmer)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(session-use-package t nil (session))
@@ -157,6 +157,10 @@
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
  '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(imenu-list-entry-face-2 ((t (:inherit imenu-list-entry-face :foreground "dark cyan"))))
+ '(smerge-lower ((t (:background "gray"))))
+ '(smerge-markers ((t (:background "salmon"))))
+ '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "light salmon"))))
+ '(smerge-upper ((t (:background "gainsboro"))))
  '(vertical-border ((t (:background "white" :foreground "white")))))
 
 
