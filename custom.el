@@ -146,7 +146,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#233333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "adobe" :family "Source Code Pro"))))
- ;; moe-theme
  '(company-echo ((t (:foreground "#5f5f5f" :slant normal))) t)
  '(company-echo-common ((t (:background "#ffd5e5" :foreground "#cc0000" :slant normal))))
  '(company-preview ((t (:background "#5f5f5f" :foreground "#ff4ea3" :slant normal))))
@@ -173,7 +172,6 @@
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
  '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(imenu-list-entry-face-2 ((t (:inherit imenu-list-entry-face :foreground "dark cyan"))))
- ;; moe-theme
  '(rainbow-delimiters-base-face ((t (:inherit nil :slant normal))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#cc0000" :slant normal :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#1f5bff" :slant normal :weight bold))))
@@ -190,8 +188,7 @@
  '(smerge-lower ((t (:background "gray"))))
  '(smerge-markers ((t (:background "salmon"))))
  '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "light salmon"))))
- '(smerge-upper ((t (:background "gainsboro"))))
- '(vertical-border ((t (:background "white" :foreground "white")))))
+ '(smerge-upper ((t (:background "gainsboro")))))
 
 
 
