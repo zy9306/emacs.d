@@ -172,6 +172,7 @@
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
  '(imenu-list-entry-face-1 ((t (:inherit imenu-list-entry-face :foreground "slate blue"))))
  '(imenu-list-entry-face-2 ((t (:inherit imenu-list-entry-face :foreground "dark cyan"))))
+ '(neo-header-face ((t (:foreground "#3a81c3"))))
  '(neo-vc-added-face ((t (:foreground "light sea green"))))
  '(neo-vc-default-face ((t (:foreground "#233333"))))
  '(neo-vc-ignored-face ((t (:foreground "#777777"))))
