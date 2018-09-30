@@ -43,6 +43,10 @@
 (global-set-key (kbd "C-x |") 'split-window-horizontally-instead)
 (global-set-key (kbd "C-x _") 'split-window-vertically-instead)
 
+;; buffer dedicated后显示该mode,仅作显示以判断是否locked
+(define-minor-mode dedication-buffer-locked-mode
+  "locked"
+  nil " <!!!>" nil)
 ;; 如果设置了,该窗口的内容不会被其它buffer覆盖,该窗口只用于显示该buffer
 (defun sanityinc/toggle-current-window-dedication ()
   "Toggle whether the current window is dedicated to its current buffer."
@@ -52,7 +56,10 @@
     (set-window-dedicated-p window (not was-dedicated))
     (message "Window %sdedicated to %s"
              (if was-dedicated "no longer " "")
-             (buffer-name))))
+             (buffer-name))
+    (if was-dedicated
+        (dedication-buffer-locked-mode 0)
+      (dedication-buffer-locked-mode t))))
 
 (global-set-key (kbd "C-c <down>") 'sanityinc/toggle-current-window-dedication)
 
