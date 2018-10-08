@@ -190,6 +190,7 @@
  '(rainbow-delimiters-mismatched-face ((t (:inherit (rainbow-delimiters-unmatched-face rainbow-delimiters-base-face) :slant normal))))
  '(rainbow-delimiters-unmatched-face ((t (:background "#a40000" :foreground "#ffffff" :slant normal :weight bold))))
  '(region ((t (:background "#5fafd7" :foreground "#ffffff" :slant normal))))
+ '(sh-heredoc ((t (:foreground "rosy brown" :weight bold))))
  '(smerge-lower ((t (:background "gray"))))
  '(smerge-markers ((t (:background "salmon"))))
  '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "light salmon"))))
