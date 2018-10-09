@@ -146,6 +146,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#233333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "adobe" :family "Source Code Pro"))))
+ '(anzu-replace-to ((t (:foreground "deep sky blue" :weight bold))))
  '(company-echo ((t (:foreground "#5f5f5f" :slant normal))) t)
  '(company-echo-common ((t (:background "#ffd5e5" :foreground "#cc0000" :slant normal))))
  '(company-preview ((t (:background "#5f5f5f" :foreground "#ff4ea3" :slant normal))))
