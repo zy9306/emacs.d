@@ -3,7 +3,6 @@
   :ensure helm-projectile
   :ensure helm-ag
   :ensure helm-descbinds
-  :ensure helm-swoop
   :ensure helm-directory
   :config
   ;; 只在当前buffer内打开helm
@@ -27,12 +26,6 @@
   (define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
   (define-key isearch-mode-map (kbd "C-o") 'helm-occur-from-isearch)
 
-  ;; swoop
-  (global-set-key (kbd "M-i") 'helm-swoop) ;; 该快捷键冲突
-  (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
-  (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
-  (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
-
   ;; helm-directory
   (define-key global-map (kbd "C-c h d") 'helm-directory)
   (setq helm-directory-basedir "~/")
@@ -47,6 +40,30 @@
   :ensure t
   :config
   (global-set-key (kbd "C-s") 'swiper))
+
+(use-package helm-swoop
+  :ensure t
+  :config
+  ;; swoop
+  (global-set-key (kbd "M-i") 'helm-swoop) ;; 该快捷键冲突
+  (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+  (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
+  (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
+  ;; If nil, you can slightly boost invoke speed in exchange for text color
+  (setq helm-swoop-speed-or-color nil)
+  ;; Move up and down like isearch
+  (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
+  (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
+  (define-key helm-multi-swoop-map (kbd "C-r") 'helm-previous-line)
+  (define-key helm-multi-swoop-map (kbd "C-s") 'helm-next-line)
+  ;; If this value is t, split window inside the current window
+  (setq helm-swoop-split-with-multiple-windows t)
+  ;; Optional face for line numbers
+  ;; Face name is `helm-swoop-line-number-face`
+  (setq helm-swoop-use-line-number-face t)
+  ;; If you prefer fuzzy matching
+  (setq helm-swoop-use-fuzzy-match t)
+  )
 
 
 (provide 'iris-helm)
