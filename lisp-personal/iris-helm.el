@@ -6,6 +6,8 @@
   :ensure helm-swoop
   :ensure helm-directory
   :config
+  ;; 只在当前buffer内打开helm
+  (setq helm-split-window-inside-p t)
   (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "C-x C-m") 'helm-M-x)
   (global-set-key (kbd "M-y") 'helm-show-kill-ring)
@@ -25,15 +27,8 @@
   (define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
   (define-key isearch-mode-map (kbd "C-o") 'helm-occur-from-isearch)
 
-  ;; ;; shell history.
-  ;; (define-key shell-mode-map (kbd "C-c C-l") 'helm-comint-input-ring)
-  ;; ;; use helm to list eshell history
-  ;; (add-hook 'eshell-mode-hook
-  ;;           #'(lambda ()
-  ;;               (substitute-key-definition 'eshell-list-history 'helm-eshell-history eshell-mode-map)))
-
-
-  (global-set-key (kbd "M-i") 'helm-swoop)
+  ;; swoop
+  (global-set-key (kbd "M-i") 'helm-swoop) ;; 该快捷键冲突
   (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
   (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
   (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
@@ -47,6 +42,11 @@
   (helm-descbinds-mode)
   (helm-mode 1)
   (helm-projectile-on))
+
+(use-package swiper
+  :ensure t
+  :config
+  (global-set-key (kbd "C-s") 'swiper))
 
 
 (provide 'iris-helm)
