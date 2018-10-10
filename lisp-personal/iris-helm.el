@@ -44,10 +44,10 @@
   (setq helm-directory-basedir "~/")
   (setq helm-directory-basedir-list '("~/usr/local/" "~/etc/")))
 
-(use-package swiper
+(use-package swiper-helm
   :ensure t
   :config
-  (global-set-key (kbd "C-s") 'swiper))
+  (global-set-key (kbd "C-s") 'swiper-helm))
 
 (use-package helm-swoop
   ;; https://github.com/ShingoFukuyama/helm-swoop
@@ -68,7 +68,7 @@
   ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
   (setq helm-swoop-split-direction 'split-window-vertically)
   ;; If nil, you can slightly boost invoke speed in exchange for text color
-  (setq helm-swoop-speed-or-color t)
+  (setq helm-swoop-speed-or-color nil)
   ;; Go to the opposite side of line from the end or beginning of line
   (setq helm-swoop-move-to-line-cycle t)
   ;; Optional face for line numbers
