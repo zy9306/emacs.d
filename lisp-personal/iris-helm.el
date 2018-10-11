@@ -44,10 +44,15 @@
   (setq helm-directory-basedir "~/")
   (setq helm-directory-basedir-list '("~/usr/local/" "~/etc/")))
 
-(use-package swiper-helm
+;; (use-package swiper-helm
+;;   :ensure t
+;;   :config
+;;   (global-set-key (kbd "C-s") 'swiper-helm))
+
+(use-package swiper
   :ensure t
   :config
-  (global-set-key (kbd "C-s") 'swiper-helm))
+  (global-set-key (kbd "C-s") 'swiper))
 
 (use-package helm-swoop
   ;; https://github.com/ShingoFukuyama/helm-swoop
