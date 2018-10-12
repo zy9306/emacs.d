@@ -64,13 +64,13 @@
   :config
   (xclip-mode 1))
 
-
-(use-package real-auto-save
-  :ensure t
-  :config
-  (add-hook 'prog-mode-hook 'real-auto-save-mode)
-  (add-hook 'text-mode-hook 'real-auto-save-mode)
-  (setq real-auto-save-interval 1))
+;; 和helm的C-j冲突,暂时禁用
+;; (use-package real-auto-save
+;;   :ensure t
+;;   :config
+;;   (add-hook 'prog-mode-hook 'real-auto-save-mode)
+;;   (add-hook 'text-mode-hook 'real-auto-save-mode)
+;;   (setq real-auto-save-interval 1))
 
 
 ;; 更改自动备份文件位置及设置删除时间
