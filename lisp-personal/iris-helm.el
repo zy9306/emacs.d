@@ -23,9 +23,11 @@
 
   ;; 只在当前buffer内打开helm
   ;; (setq helm-split-window-inside-p t)
-  (setq helm-split-window-default-side 'other)
+
+  ;; 和neotree冲突
+  ;; (setq helm-split-window-default-side 'other)
   ;; 只显示helm-buffer和当前的buffer
-  (setq helm-always-two-windows t)
+  ;; (setq helm-always-two-windows t)
 
   (helm-mode 1))
 
