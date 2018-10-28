@@ -89,6 +89,9 @@
       (message "%s" file)
       (delete-file file))))
 
+;; 下划线为单词的一部分
+(modify-syntax-entry ?_ "w")
+;; (add-hook 'c-mode-common-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
