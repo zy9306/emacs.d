@@ -93,6 +93,13 @@
 (modify-syntax-entry ?_ "w")
 ;; (add-hook 'c-mode-common-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
+;; 不删除固定的window,对treemacs以及其它固定的buffer起作用
+(add-hook 'window-configuration-change-hook
+          (lambda ()
+            (dolist (w (window-list))
+              (if (window-dedicated-p w)
+                  (set-window-parameter w 'no-delete-other-windows t)))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

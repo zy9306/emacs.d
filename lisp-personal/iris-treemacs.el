@@ -63,13 +63,6 @@
 ;;   :after treemacs evil
 ;;   :ensure t)
 
-;; 不删除固定的window,不止treemacs,对其buffer也起作用
-(add-hook 'window-configuration-change-hook
-          (lambda ()
-            (dolist (w (window-list))
-              (if (window-dedicated-p w)
-                  (set-window-parameter w 'no-delete-other-windows t)))))
-
 (use-package treemacs-projectile
   :after treemacs projectile
   :ensure t)
