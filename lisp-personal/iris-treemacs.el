@@ -53,7 +53,11 @@
         ("C-x t t"   . treemacs)
         ("C-x t B"   . treemacs-bookmark)
         ("C-x t C-t" . treemacs-find-file)
-        ("C-x t M-t" . treemacs-find-tag)))
+        ("C-x t M-t" . treemacs-find-tag)
+
+        ("C-x t C-s" .  treemacs-switch-workspace)
+        ("C-x t C-c" . treemacs-create-workspace)
+        ("C-x t C-d" . treemacs-remove-workspace)))
 
 ;; (use-package treemacs-evil
 ;;   :after treemacs evil
