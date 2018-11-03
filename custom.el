@@ -22,6 +22,8 @@
 ;;; 如果是暗色主题,选zenburn-theme或者material-theme的暗色
 ;;; 白色主题选leuven或material-theme,主题上不要做太多折腾了,没什么意义
 ;;; org-mode用material的,区分light和正常暗色,见底下org-mode设置
+(require-package 'github-theme)
+(require-package 'github-modern-theme)
 (require-package 'zenburn-theme)
 (require-package 'material-theme)
 (require-package 'spacemacs-theme)
@@ -111,10 +113,10 @@
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(company-tooltip-idle-delay 0.05)
- '(custom-enabled-themes (quote (spacemacs-light)))
+ '(custom-enabled-themes (quote (github-modern)))
  '(custom-safe-themes
    (quote
-    ("13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "4d8578f86c9de7531ba8519edd0a1f6be090a6ef1e093feabfd5263e454882fb" "83e7d353e2c2c4dde0de89dc824b51fa56b1bc2241da78de06eb641b84bb629f" "4b2b038b98383459c1cf99ee7129769017d5da44959bf1efe3ce34208a353bb7" "ddac41e96a403e46ad595499148b12512610927a77f8810e74e8ce8205cf4e01" "241ddb7865c44fc66e7f862ff4210e8497c994f0003f698861ffcee01ee77e68" "8a8d606a19d903bbf54c2cae04b8c590fbee05b58b1f3d64f749d57a8d995173" "8e6abd8c511032be7af6223f06bf3d06d5e7b63c0ffb946e8a0d1656dd3944c8" "62f8ada330231b1bc36f5fb902bea1d6aa024c4ab1817b021aa62824629026b6" "3ba8e07ef9e4b1154fb0d8266b1093313e2c72e471e2ef85db6cb90754d093c3" "9ed36b35eb2f1eed0f992a0ab1150859d38fce9facfe0dfeb5bf0cf578d8e24f" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
+    ("0daf22a3438a9c0998c777a771f23435c12a1d8844969a28f75820dd71ff64e1" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "4d8578f86c9de7531ba8519edd0a1f6be090a6ef1e093feabfd5263e454882fb" "83e7d353e2c2c4dde0de89dc824b51fa56b1bc2241da78de06eb641b84bb629f" "4b2b038b98383459c1cf99ee7129769017d5da44959bf1efe3ce34208a353bb7" "ddac41e96a403e46ad595499148b12512610927a77f8810e74e8ce8205cf4e01" "241ddb7865c44fc66e7f862ff4210e8497c994f0003f698861ffcee01ee77e68" "8a8d606a19d903bbf54c2cae04b8c590fbee05b58b1f3d64f749d57a8d995173" "8e6abd8c511032be7af6223f06bf3d06d5e7b63c0ffb946e8a0d1656dd3944c8" "62f8ada330231b1bc36f5fb902bea1d6aa024c4ab1817b021aa62824629026b6" "3ba8e07ef9e4b1154fb0d8266b1093313e2c72e471e2ef85db6cb90754d093c3" "9ed36b35eb2f1eed0f992a0ab1150859d38fce9facfe0dfeb5bf0cf578d8e24f" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
  '(elpy-rpc-ignored-buffer-size 2097152)
  '(fci-rule-color "#d6d6d6")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
@@ -125,7 +127,7 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (highlight-indentation all-the-icons buffer-move paradox use-package spaceline moe-theme spacemacs-theme material-theme zenburn-theme uptimes dotenv-mode daemons dsvn htmlize lua-mode gnuplot flycheck-ledger ledger-mode origami regex-tool cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight aggressive-indent immortal-scratch auto-compile ipretty elisp-slime-nav paredit-everywhere paredit nginx-mode company-terraform terraform-mode docker-compose-mode dockerfile-mode docker yaml-mode restclient httprepl css-eldoc skewer-less sass-mode rainbow-mode tagedit org-pomodoro writeroom-mode org-cliplink add-node-modules-path skewer-mode js-comint xref-js2 prettier-js typescript-mode coffee-mode js2-mode json-mode csv-mode markdown-mode cmd-to-echo alert magithub github-clone bug-reference-github yagist git-messenger git-commit magit-todos magit git-timemachine gitconfig-mode gitignore-mode git-blamed vc-darcs darcsum browse-at-remote diff-hl whitespace-cleanup-mode guide-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors expand-region browse-kill-ring symbol-overlay undo-tree rainbow-delimiters beacon vlf list-unicode-display unfill mmm-mode default-text-scale session company-quickhelp company smex flycheck-color-mode-line flycheck ibuffer-vc wgrep-ag ag anzu disable-mouse command-log-mode scratch diminish wgrep exec-path-from-shell cl-lib fullframe seq swiper-helm indent-tools avy iedit company-go go-eldoc go-mode neotree real-auto-save ranger treemacs-projectile treemacs pyvenv helm-directory imenu-list company-anaconda anaconda-mode find-temp-file helm-swoop helm-descbinds helm-ag helm-projectile helm counsel-projectile auto-virtualenv elpy nlinum mode-line-bell switch-window ivy-xref projectile counsel ivy-historian ivy diredfl dimmer)))
+    (highlight-indentation all-the-icons buffer-move paradox use-package spaceline moe-theme spacemacs-theme material-theme zenburn-theme github-modern-theme github-theme uptimes dotenv-mode daemons dsvn htmlize lua-mode gnuplot flycheck-ledger ledger-mode origami regex-tool cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight aggressive-indent immortal-scratch auto-compile ipretty elisp-slime-nav paredit-everywhere paredit nginx-mode company-terraform terraform-mode docker-compose-mode dockerfile-mode docker yaml-mode restclient httprepl css-eldoc skewer-less sass-mode rainbow-mode tagedit org-pomodoro writeroom-mode org-cliplink add-node-modules-path skewer-mode js-comint xref-js2 prettier-js typescript-mode coffee-mode js2-mode json-mode csv-mode markdown-mode cmd-to-echo alert magithub github-clone bug-reference-github yagist git-messenger git-commit magit-todos magit git-timemachine gitconfig-mode gitignore-mode git-blamed vc-darcs darcsum browse-at-remote diff-hl whitespace-cleanup-mode guide-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors expand-region browse-kill-ring symbol-overlay undo-tree rainbow-delimiters beacon vlf list-unicode-display unfill mmm-mode default-text-scale session company-quickhelp company smex flycheck-color-mode-line flycheck ibuffer-vc wgrep-ag ag anzu disable-mouse command-log-mode scratch diminish wgrep exec-path-from-shell cl-lib fullframe seq swiper-helm indent-tools avy iedit company-go go-eldoc go-mode neotree real-auto-save ranger treemacs-projectile treemacs pyvenv helm-directory imenu-list company-anaconda anaconda-mode find-temp-file helm-swoop helm-descbinds helm-ag helm-projectile helm counsel-projectile auto-virtualenv elpy nlinum mode-line-bell switch-window ivy-xref projectile counsel ivy-historian ivy diredfl dimmer)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(projectile-globally-ignored-directories
@@ -163,31 +165,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#EEEEEE" :foreground "#005F5F" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "adobe" :family "Source Code Pro"))))
  '(anzu-replace-to ((t (:foreground "deep sky blue" :weight bold))))
- '(company-echo ((t (:foreground "#5f5f5f" :slant normal))) t)
- '(company-echo-common ((t (:background "#ffd5e5" :foreground "#cc0000" :slant normal))))
- '(company-preview ((t (:background "#5f5f5f" :foreground "#ff4ea3" :slant normal))))
- '(company-preview-common ((t (:background "#5f5f5f" :foreground "#ff4ea3" :slant normal))))
- '(company-preview-search ((t (:background "#626262" :foreground "#ff4ea3" :slant normal :weight bold))))
- '(company-scrollbar-bg ((t (:background "#5f5f5f" :slant normal))))
- '(company-scrollbar-fg ((t (:background "#9e9e9e" :slant normal))))
- '(company-template-field ((t (:background "#ffffaf" :foreground "#626262" :slant normal))))
- '(company-tooltip ((t (:background "#3a3a3a" :foreground "#5fafd7" :slant normal))))
- '(company-tooltip-annotation ((t (:background "#626262" :foreground "#ef2929" :slant normal))))
- '(company-tooltip-annotation-selection ((t (:inherit company-tooltip-annotation :slant normal))))
- '(company-tooltip-common ((t (:background "#5f5f5f" :foreground "#5fafd7" :slant normal))))
- '(company-tooltip-common-selection ((t (:background "#767676" :foreground "#afd7ff" :slant normal :weight bold))))
- '(company-tooltip-mouse ((t (:background "#d7ff5f" :foreground "#5f5f5f" :slant normal))))
- '(company-tooltip-search ((t (:inherit highlight :slant normal))))
- '(company-tooltip-search-selection ((t (:inherit highlight :slant normal))))
- '(company-tooltip-selection ((t (:background "#626262" :foreground "#afd7ff" :slant normal))))
- '(flycheck-error ((t (:underline "#B71C1C"))))
- '(flycheck-info ((t (:underline "#2196f3"))))
- '(flycheck-warning ((t (:underline "#FF5722"))))
- '(font-lock-comment-delimiter-face ((t (:inherit default :foreground "#767676" :slant italic))))
- '(font-lock-comment-face ((t (:background "#EEEEEE" :foreground "#767676" :slant italic))))
- '(font-lock-string-face ((t (:foreground "#2d9574" :weight bold))))
  '(fringe ((t (:background "#EEEEEE"))))
  '(hl-line ((t (:background "#E4E4E4"))))
  '(imenu-list-entry-face-0 ((t (:inherit imenu-list-entry-face :foreground "firebrick"))))
