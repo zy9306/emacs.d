@@ -15,8 +15,8 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/elpa-mirror")
 
 ;; 启动时最大化
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(global-set-key (kbd "C-x 5 s") 'select-frame-by-name)
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (global-set-key (kbd "C-x 5 s") 'select-frame-by-name)
 
 ;;; 也可以在启动之后运行 package-install-selected-packages
 ;;; 如果是暗色主题,选zenburn-theme或者material-theme的暗色
@@ -188,6 +188,9 @@
  '(org-block ((t nil)))
  '(org-block-begin-line ((t (:inherit org-meta-line :background "light gray" :box (:line-width 2 :color "light gray" :style pressed-button) :underline t))))
  '(org-hide ((t (:foreground "light salmon"))))
+ '(org-level-1 ((t (:foreground "#a71d5d" :weight bold))))
+ '(org-level-3 ((t (:foreground "sea green"))))
+ '(org-level-4 ((t (:foreground "dark olive green"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil :slant normal))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#cc0000" :slant normal :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#1f5bff" :slant normal :weight bold))))
