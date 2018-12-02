@@ -130,6 +130,7 @@
    (quote
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(org-bullets-bullet-list (quote ("✿" "✸" "◉" "○")))
+ '(org-export-with-sub-superscripts (quote {}))
  '(org-hide-emphasis-markers nil)
  '(org-hide-leading-stars nil)
  '(org-indent-mode-turns-on-hiding-stars nil)
