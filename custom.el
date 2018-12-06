@@ -1,32 +1,27 @@
-;;; 前置条件
-;;; 1.系统需安装ag,否则M-?(查找引用), M-s /(swipper搜索）等命令无法工作，搜索相关的在init-ivy.el文件中，可以好好看看
-;;;   https://github.com/ggreer/the_silver_searcher
-;;;   sudo apt-get install silversearcher-ag
-;;;   C-c p s s使用ag搜索，C-c p s g使用grep搜索，ag效率比grep高很多
-;;;   projectile文档 https://projectile.readthedocs.io/en/latest/usage/
-;;;   ag.el文档 http://agel.readthedocs.io/en/latest/installation.html
-;;;   todo: 如何以正则进行搜索？
+;;; custom.el --- my custom config
 
-;;; 如果不想出错的时候弹出一个buffer调试信息，可以设置 toggle-debug-on-error
-;;; 这样就只会在minibuffer提示message,建议不要全局开启，只在需要的时候手动切换
+;;; Commentary:
+
+;; dependons:
+;; silversearcher-ag on debian or the_silver_searcher on macos
+;; xclip and xsel on linux or pbpaste/pbcopy on macos(already installed)
+
+;;; Code:
 
 (add-to-list 'load-path "~/.emacs.d/lisp-personal")
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/elpa-mirror")
 
-;; 启动时最大化
+;; maximized when emacs start
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 ;; (global-set-key (kbd "C-x 5 s") 'select-frame-by-name)
 
-;;; 也可以在启动之后运行 package-install-selected-packages
-;;; 如果是暗色主题,选zenburn-theme或者material-theme的暗色
-;;; 白色主题选leuven或material-theme,主题上不要做太多折腾了,没什么意义
 ;;; org-mode用material的,区分light和正常暗色,见底下org-mode设置
 (require-package 'github-theme)
 (require-package 'zenburn-theme)
 (require-package 'material-theme)
 (require-package 'spacemacs-theme)
-(require-package 'moe-theme)  ;; https://github.com/kuanyui/moe-theme.el
+(require-package 'moe-theme)
 (require-package 'spaceline)
 (require-package 'use-package)
 (require-package 'multiple-cursors)
@@ -44,13 +39,11 @@
 ;; (require 'spaceline-config)
 ;; (spaceline-emacs-theme)
 
-;; https://stackoverflow.com/questions/18316665/how-to-improve-emacs-performance-when-view-large-file
-;; 代码着色延迟，可明显改善卡顿情况(注释掉的原因，大文件依旧卡顿，文件太大直接局部关掉elpy吧,目前使用anaconda代替，待更优解)
+;; maybe can be a lit fast
 ;; (setq jit-lock-defer-time 0.05)
 
 
-
-;; 使用use-package
+;; config use-package
 ;; This is only needed once, near the top of the file
 (eval-when-compile
   ;; Following line is not needed if use-package.el is in ~/.emacs.d
@@ -58,8 +51,6 @@
   (require 'use-package))
 (use-package unicad)
 
-;; 依赖于xclip
-;; sudo apt-get install xclip
 (use-package xclip
   :ensure t
   :config
@@ -97,7 +88,6 @@
 
 ;; 下划线为单词的一部分
 (modify-syntax-entry ?_ "w")
-;; (add-hook 'c-mode-common-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
 ;; 不删除固定的window,对treemacs以及其它固定的buffer起作用
 (add-hook 'window-configuration-change-hook
@@ -136,7 +126,7 @@
  '(org-indent-mode-turns-on-hiding-stars nil)
  '(package-selected-packages
    (quote
-    (highlight-indentation all-the-icons buffer-move paradox use-package spaceline moe-theme spacemacs-theme material-theme zenburn-theme github-theme uptimes dotenv-mode daemons dsvn htmlize lua-mode gnuplot flycheck-ledger ledger-mode origami regex-tool cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight aggressive-indent immortal-scratch auto-compile ipretty elisp-slime-nav paredit-everywhere paredit nginx-mode company-terraform terraform-mode docker-compose-mode dockerfile-mode docker yaml-mode restclient httprepl css-eldoc skewer-less sass-mode rainbow-mode tagedit org-pomodoro writeroom-mode org-cliplink add-node-modules-path skewer-mode js-comint xref-js2 prettier-js typescript-mode coffee-mode js2-mode json-mode csv-mode markdown-mode cmd-to-echo alert magithub github-clone bug-reference-github yagist git-messenger git-commit magit-todos magit git-timemachine gitconfig-mode gitignore-mode git-blamed vc-darcs darcsum browse-at-remote diff-hl whitespace-cleanup-mode guide-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors expand-region browse-kill-ring symbol-overlay undo-tree rainbow-delimiters beacon vlf list-unicode-display unfill mmm-mode default-text-scale session company-quickhelp company smex flycheck-color-mode-line flycheck ibuffer-vc wgrep-ag ag anzu disable-mouse command-log-mode scratch diminish wgrep exec-path-from-shell cl-lib fullframe seq auto-org-md org-bullets nov github-modern-theme swiper-helm indent-tools avy iedit company-go go-eldoc go-mode neotree real-auto-save ranger treemacs-projectile treemacs pyvenv helm-directory imenu-list company-anaconda anaconda-mode find-temp-file helm-swoop helm-descbinds helm-ag helm-projectile helm counsel-projectile auto-virtualenv elpy nlinum mode-line-bell switch-window ivy-xref projectile counsel ivy-historian ivy diredfl dimmer)))
+    (highlight-indentation all-the-icons buffer-move paradox use-package spaceline moe-theme spacemacs-theme material-theme zenburn-theme github-theme uptimes dotenv-mode daemons dsvn htmlize lua-mode gnuplot flycheck-ledger ledger-mode origami regex-tool cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight aggressive-indent immortal-scratch auto-compile ipretty elisp-slime-nav paredit-everywhere paredit nginx-mode company-terraform terraform-mode docker-compose-mode dockerfile-mode docker yaml-mode restclient httprepl css-eldoc skewer-less sass-mode rainbow-mode tagedit org-pomodoro writeroom-mode org-cliplink add-node-modules-path skewer-mode js-comint xref-js2 prettier-js typescript-mode coffee-mode js2-mode json-mode csv-mode markdown-mode cmd-to-echo alert magithub github-clone bug-reference-github yagist git-messenger git-commit magit-todos magit git-timemachine gitconfig-mode gitignore-mode git-blamed vc-darcs darcsum browse-at-remote diff-hl whitespace-cleanup-mode guide-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors expand-region browse-kill-ring symbol-overlay undo-tree rainbow-delimiters beacon vlf list-unicode-display unfill mmm-mode default-text-scale session company-quickhelp company smex flycheck-color-mode-line flycheck ibuffer-vc wgrep-ag ag anzu disable-mouse command-log-mode scratch diminish wgrep exec-path-from-shell cl-lib fullframe seq projectile auto-org-md org-bullets nov github-modern-theme swiper-helm indent-tools avy iedit company-go go-eldoc go-mode neotree real-auto-save ranger treemacs-projectile treemacs pyvenv helm-directory imenu-list company-anaconda anaconda-mode find-temp-file helm-swoop helm-descbinds helm-ag helm-projectile helm counsel-projectile auto-virtualenv elpy nlinum mode-line-bell switch-window ivy-xref counsel ivy-historian ivy diredfl dimmer)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(projectile-globally-ignored-directories
@@ -218,15 +208,6 @@
  '(smerge-upper ((t (:background "gainsboro")))))
 
 
-
-
-
-;; linum-mode会有性能问题，卡顿，使用nlinum-mode代替
-;; 默认不显示行号了，如有需要，手动开启，使用nlinum-mode
-;; (if (eq system-type 'windows-nt)
-;;     (message "windows下linum-mode和中英文字体都设置成文泉驿会有冲突的bug,不启用nlinum-mode")
-;;   (global-nlinum-mode 1))
-;; 若不出现显示问题，无需手动调整
 (setq-default tab-width 4)
 (use-package indent-tools
   :ensure t
@@ -234,20 +215,17 @@
   (global-set-key (kbd "C-c >") 'indent-tools-hydra/body))
 
 
-;; org-mode
+;;; org-mode
 ;; 代码语法高亮
 (setq org-src-fontify-natively t)
 ;; 始终启用缩进
 (add-hook 'org-mode-hook 'org-indent-mode)
-
 (setq org-agenda-files (file-expand-wildcards "~/Nutstore/org/*.org"))
-
 ;; 保存org时自动转换一份md并保存
 (use-package auto-org-md
   :ensure t
   :config
   (add-hook 'org-mode-hook 'auto-org-md-mode))
-
 ;; 时间日期相关的key
 ;; 本来org-time-stamp-inactive默认为C-c !
 ;; 但是C-c !被fly-check的prefix给占了
@@ -256,9 +234,7 @@
 (global-set-key (kbd "C-c t")  'org-time-stamp-inactive)
 
 
-
 ;;; 改变buffer位置，比如将buffer移到左边或右边
-;;; https://github.com/lukhas/buffer-move/tree/cb517ecf8409b5fdcda472d7190c6021f0c49751
 (require 'buffer-move)
 (global-set-key (kbd "<C-S-up>")     'buf-move-up)
 (global-set-key (kbd "<C-S-down>")   'buf-move-down)
@@ -281,7 +257,7 @@
 ;; treemacs替代
 (use-package iris-neotree)
 (use-package iris-avy)
-;;(use-package iris-theme) ;; 只有在用spacemacs-theme时才用这个,用其它主题的话不需要了
+;;(use-package iris-theme) ;; only work with spacemacs-theme
 (use-package iris-find-temp-file)
 ;; pull request解决python二级折叠问题
 ;; https://github.com/gregsexton/origami.el/pull/64/files
@@ -307,13 +283,11 @@
 ;; 2.深色主题下使用
 ;; (use-package iris-material-org-theme-dark)
 
-
 ;; 光标为横线
 ;; (set-default 'cursor-type 'hbar)
 
 ;; 如果值为1,display "lambda" as "λ"
 ;; 另外python中and or等都会显示成符号,关闭
-;; 不知为何,不生效
 ;; 注释掉 init-editing-utils.el 中的以下代码可以生效
 ;; (when (fboundp 'global-prettify-symbols-mode)
 ;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
@@ -322,17 +296,13 @@
 ;; 终端下也可以显示文件修改信息
 (unless (display-graphic-p) (diff-hl-margin-mode))
 
-;; 对特定的mode打开只读(全局只读时安装package时会出现编译问题)
+;; 全局只读时安装package时会出现编译问题)
 ;; (add-hook 'python-mode-hook (lambda () (setq buffer-read-only t)))
 
-;; init-editing-utils.el已经在after-init-hook全局启用了global-auto-revert-mode,但没起作用,auto-revert-mode依然是关闭的
-;; auto-revert-mode在after-init-hook添加都不起作用,原因待查,目前对特定的mode启用,也可以在prog-mode-hook启用,这样所有buffer都能起作用
 ;; (add-hook 'python-mode-hook (lambda () (auto-revert-mode t)))
 (add-hook 'prog-mode-hook (lambda () (auto-revert-mode t)))
 
-
 (global-hl-line-mode t)
-
 
 ;; 空白行空格问题处理
 ;; whitespace-cleanup函数可用,但不绑定whitespace-cleanup-mode到任何hook
@@ -342,9 +312,11 @@
 ;;   :ensure t)
 ;; (setq-default show-trailing-whitespace t)
 ;; 所有行尾及新行显示$,不能直接启用(global-whitespace-newline-mode t),否则会触发whitespace-mode
-;; 和show-trailing-whitespace只能二选一,且由于显示过多的$导致看起来比较零乱,禁用
+;; 和show-trailing-whitespace只能二选一
 ;; (add-hook 'prog-mode-hook (lambda () (whitespace-newline-mode t)))
 
 
 (global-set-key (kbd "C-0") (quote scroll-up-line))
 (global-set-key (kbd "C-9") (quote scroll-down-line))
+
+;;; custom.el ends here
