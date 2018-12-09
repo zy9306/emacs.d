@@ -23,12 +23,12 @@
                        )
   (setq chinese-fonts-scale (or chinese-fonts-scale 1.2))
   ;; 不需要存在本地
-  ;; (save-excursion
-  ;;   (with-current-buffer (find-file-noselect "~/.config/system-config/emacs-font-size")
-  ;;     (delete-region (point-min) (point-max))
-  ;;     (insert (format "%s" english-font-size))
-  ;;     (save-buffer)
-  ;;     (kill-buffer)))
+  (save-excursion
+    (with-current-buffer (find-file-noselect "~/.config/system-config/emacs-font-size")
+      (delete-region (point-min) (point-max))
+      (insert (format "%s" english-font-size))
+      (save-buffer)
+      (kill-buffer)))
   (setq face-font-rescale-alist `(("思源黑体" . ,chinese-fonts-scale)
                                   ("思源宋体 CN" . ,chinese-fonts-scale)
                                   ("Microsoft Yahei" . ,chinese-fonts-scale)
@@ -76,18 +76,18 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 (defvar bhj-chinese-fonts '("思源黑体" "AR PL UKai CN" "FandolKai" "文泉驿等宽微米黑" "思源宋体" "Source Code Pro" "Microsoft Yahei" "Microsoft_Yahei" "微软雅黑" "黑体" "新宋体" "宋体"))
 
 (qiang-set-font
- bhj-english-fonts 10.5
+ bhj-english-fonts
  ;; 直接指定字号,但保存在配置文件有好处就是可以根据不同的电脑进行适配
- ;; (if (file-exists-p "~/.config/system-config/emacs-font-size")
- ;;     (save-excursion
- ;;       (find-file "~/.config/system-config/emacs-font-size")
- ;;       (goto-char (point-min))
- ;;       (let ((monaco-font-size (read (current-buffer))))
- ;;         (kill-buffer (current-buffer))
- ;;         (if (numberp monaco-font-size)
- ;;             monaco-font-size
- ;;           11.5)))
- ;;   11.5)
+ (if (file-exists-p "~/.config/system-config/emacs-font-size")
+     (save-excursion
+       (find-file "~/.config/system-config/emacs-font-size")
+       (goto-char (point-min))
+       (let ((monaco-font-size (read (current-buffer))))
+         (kill-buffer (current-buffer))
+         (if (numberp monaco-font-size)
+             monaco-font-size
+           11.5)))
+   10.5)
  bhj-chinese-fonts)
 
 (defvar chinese-font-size-scale-alist nil)
