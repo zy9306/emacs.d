@@ -126,7 +126,7 @@
  '(org-indent-mode-turns-on-hiding-stars nil)
  '(package-selected-packages
    (quote
-    (highlight-indentation all-the-icons buffer-move paradox use-package spaceline moe-theme spacemacs-theme material-theme zenburn-theme github-theme uptimes dotenv-mode daemons dsvn htmlize lua-mode gnuplot flycheck-ledger ledger-mode origami regex-tool cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight aggressive-indent immortal-scratch auto-compile ipretty elisp-slime-nav paredit-everywhere paredit nginx-mode company-terraform terraform-mode docker-compose-mode dockerfile-mode docker yaml-mode restclient httprepl css-eldoc skewer-less sass-mode rainbow-mode tagedit org-pomodoro writeroom-mode org-cliplink add-node-modules-path skewer-mode js-comint xref-js2 prettier-js typescript-mode coffee-mode js2-mode json-mode csv-mode markdown-mode cmd-to-echo alert magithub github-clone bug-reference-github yagist git-messenger git-commit magit-todos magit git-timemachine gitconfig-mode gitignore-mode git-blamed vc-darcs darcsum browse-at-remote diff-hl whitespace-cleanup-mode guide-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors expand-region browse-kill-ring symbol-overlay undo-tree rainbow-delimiters beacon vlf list-unicode-display unfill mmm-mode default-text-scale session company-quickhelp company smex flycheck-color-mode-line flycheck ibuffer-vc wgrep-ag ag anzu disable-mouse command-log-mode scratch diminish wgrep exec-path-from-shell cl-lib fullframe seq projectile auto-org-md org-bullets nov github-modern-theme swiper-helm indent-tools avy iedit company-go go-eldoc go-mode neotree real-auto-save ranger treemacs-projectile treemacs pyvenv helm-directory imenu-list company-anaconda anaconda-mode find-temp-file helm-swoop helm-descbinds helm-ag helm-projectile helm counsel-projectile auto-virtualenv elpy nlinum mode-line-bell switch-window ivy-xref counsel ivy-historian ivy diredfl dimmer)))
+    (highlight-indentation all-the-icons buffer-move paradox use-package spaceline moe-theme spacemacs-theme material-theme zenburn-theme github-theme uptimes dotenv-mode daemons osx-location dsvn htmlize lua-mode gnuplot flycheck-ledger ledger-mode origami regex-tool cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight aggressive-indent immortal-scratch auto-compile ipretty elisp-slime-nav paredit-everywhere paredit nginx-mode company-terraform terraform-mode docker-compose-mode dockerfile-mode docker yaml-mode restclient httprepl css-eldoc skewer-less sass-mode rainbow-mode tagedit org-pomodoro writeroom-mode org-cliplink grab-mac-link add-node-modules-path skewer-mode js-comint xref-js2 prettier-js typescript-mode coffee-mode js2-mode json-mode csv-mode markdown-mode cmd-to-echo alert magithub github-clone bug-reference-github yagist git-messenger git-commit magit-todos magit git-timemachine gitconfig-mode gitignore-mode git-blamed vc-darcs darcsum browse-at-remote diff-hl whitespace-cleanup-mode guide-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors expand-region browse-kill-ring symbol-overlay undo-tree rainbow-delimiters beacon vlf list-unicode-display unfill mmm-mode default-text-scale session company-quickhelp company smex flycheck-color-mode-line flycheck ibuffer-vc wgrep-ag ag anzu disable-mouse command-log-mode scratch diminish wgrep exec-path-from-shell cl-lib fullframe seq projectile auto-org-md org-bullets nov github-modern-theme swiper-helm indent-tools avy iedit company-go go-eldoc go-mode neotree real-auto-save ranger treemacs-projectile treemacs pyvenv helm-directory imenu-list company-anaconda anaconda-mode find-temp-file helm-swoop helm-descbinds helm-ag helm-projectile helm counsel-projectile auto-virtualenv elpy nlinum mode-line-bell switch-window ivy-xref counsel ivy-historian ivy diredfl dimmer)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(projectile-globally-ignored-directories
@@ -272,10 +272,13 @@
 
 (use-package iris-projectile)
 
-;; bhj-fonts在终端下会报错
-(if (display-graphic-p)
-    (use-package bhj-fonts)
-  (use-package iris-font))
+;; font
+(if (eq system-type 'darwin)
+    (use-package iris-font)
+  (if (display-graphic-p)
+      (use-package bhj-fonts)
+    (use-package iris-font)))
+
 
 ;; material org-theme
 ;; 1.浅色主题下使用

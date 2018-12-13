@@ -1,27 +1,40 @@
-;; ;; 中文与外文字体设置
-;; (defun set-font (english chinese english-size chinese-size)
-;;   (set-face-attribute 'default nil :font
-;;                       (format   "%s:pixelsize=%d"  english english-size))
-;;   (dolist (charset '(kana han symbol cjk-misc bopomofo))
-;;     (set-fontset-font (frame-parameter nil 'font) charset
-;;                       (font-spec :family chinese :size chinese-size))))
-;; ;; 解决fontset 'tty' does not exist
-;; ;; 终端运行过后，再次打开图形界面会出现(error "Font ‘tty’ is not defined")
-;; ;; 需删除.emacs.desktop文件，目前没有合适的解决方案，据说emacs26修复了这个问题
-;; ;; .emacs.desktop无法同时适用于tty和x环境
-;; (if (display-graphic-p)
-;;     (set-font   "文泉驿等宽微米黑" "文泉驿等宽微米黑" 13 13))
-;;; 以上弃用,原因,无法正常缩放中文字体
+;;; package --- Summary
+;;; Commentary:
+;;; code:
 
-;; 以下方法可用,但有缺陷,字体大小无法调到合适,11号太大,10号又偏小
-;; Source Code Pro不是中英文等宽的,高度会不一致
+;; 只能设置英文
+;; (if (display-graphic-p)
+;;     (progn
+;;       (set-face-attribute 'default nil :font
+;;                           "Source Code Pro 14")
+;;       (setq default-frame-alist
+;;             (append '((font . "Source Code Pro 14")) default-frame-alist))
+;;       ))
+
+
+;; ok
+;; Setting English Font
+(set-face-attribute 'default nil :font "Source Code Pro 14")
+
+;; Chinese Font
+;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;   (set-fontset-font (frame-parameter nil 'font)
+;;                     charset (font-spec :family "思源黑体"
+;;                                        :size 16)))
+;; fix: 不设:size,而是改用1.2倍缩放,如果直接设置字号,则页面缩放时只能缩放英文
+;; 中文字体在-nw时都会报错
 (if (display-graphic-p)
-    (progn
-      (set-face-attribute 'default nil :font
-                          "Source Code Pro 11")
-      (setq default-frame-alist
-            (append '((font . "Source Code Pro 11")) default-frame-alist))
-      ))
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font)
+                        charset (font-spec :family "思源黑体"))))
+(if (display-graphic-p)
+    ;; 这里的字体名并不一定是上面设置的名字,可以能过选中页面中的某一中文,C-u C-x =进行查看
+    (setq face-font-rescale-alist '(("Source Han Sans SC" . 1.2))))
+
+;; 调整倍数使以下中文和英文长度相等
+;; 你你你你你你你你你你你你你你你你你你你你
+;; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 
 ;; 设置字符集
 ;; 如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 M-x revert-buffer-with-coding-system 选择 gbk 即可.
@@ -42,4 +55,7 @@
                '(("[pP][lL][iI][nN][kK]" gbk-dos . gbk-dos)
                  ("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos))))
 
+
 (provide 'iris-font)
+
+;;; iris-font.el ends here
