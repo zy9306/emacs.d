@@ -213,6 +213,7 @@
   :ensure t
   :config
   (global-set-key (kbd "C-c >") 'indent-tools-hydra/body))
+(global-visual-line-mode t)
 
 
 ;;; org-mode
@@ -247,8 +248,8 @@
 
 (use-package iris-edit)
 (use-package iris-iedit)
-(use-package iris-helm)
-;; (use-package iris-ivy)
+;; (use-package iris-helm)
+(use-package iris-ivy)
 ;; elpy在代码折叠时非常卡,使用anaconda代替
 ;;(use-package iris-python)
 (use-package iris-python-anaconda-mode)
